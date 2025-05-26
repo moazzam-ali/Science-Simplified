@@ -5,6 +5,7 @@ import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { tenant } from "@/lib/config";
 
 // images
 import kyle from "../../../assets/about/kyle.png";
@@ -67,7 +68,7 @@ export default async function AboutPage() {
                         className={`${sectionClass} ${sectionClass}--hero`}
                     >
                         <h1 className="heading-secondary text-center">
-                            About NF Simplified
+                            About {tenant.name}
                         </h1>
                         <div className={`${aboutPageClass}__mission-container`}>
                             <div
@@ -77,19 +78,19 @@ export default async function AboutPage() {
                                     Our Mission
                                 </h2>
                                 <p className="body-large">
-                                    NF Simplified is dedicated to making
+                                    {tenant.name} is dedicated to making
                                     scientific research more accessible and
                                     understandable for individuals and families
-                                    affected by neurofibromatosis (NF1, NF2) and
+                                    affected by {tenant.disease.toLowerCase()} ({tenant.shortName}1, {tenant.shortName}2) and
                                     schwannomatosis.
                                 </p>
                                 <p className="body-regular">
                                     We believe everyone deserves access to
                                     clear, reliable information about the latest
-                                    advances in NF research. By sharing
+                                    advances in {tenant.shortName} research. By sharing
                                     simplified and accurate summaries of
                                     scientific findings, we aim to empower the
-                                    NF community to make informed decisions,
+                                    {tenant.shortName} community to make informed decisions,
                                     stay updated on medical progress, and feel
                                     connected to the breakthroughs shaping their
                                     care.
@@ -118,7 +119,7 @@ export default async function AboutPage() {
                             We are a passionate, volunteer-led team of
                             scientists, clinicians, developers, and advocates
                             working together to bridge the gap between research
-                            and the NF community.
+                            and the {tenant.shortName} community.
                         </p>
 
                         <h3 className={`${aboutPageClass}__team-subtitle`}>
@@ -156,7 +157,7 @@ export default async function AboutPage() {
                                     >
                                         Committed to building a user-friendly
                                         platform to help researchers share
-                                        clear, accurate summaries with the NF
+                                        clear, accurate summaries with the {tenant.shortName}
                                         community.
                                     </p>
                                 </div>
@@ -194,7 +195,7 @@ export default async function AboutPage() {
                                         Assistant Professor of Neurology at
                                         Harvard Medical School. Specializes in
                                         patient-centered research and improving
-                                        care in Neurofibromatosis and related
+                                        care in {tenant.disease} and related
                                         conditions.
                                     </p>
                                 </div>
@@ -249,7 +250,7 @@ export default async function AboutPage() {
                         <p className={textClass}>
                             We&apos;re a growing network of scientists who
                             volunteer to edit article summaries and share the
-                            amazing research being done in Neurofibromatosis and
+                            amazing research being done in {tenant.disease} and
                             Schwannomatosis with the community.
                         </p>
                         <div className={`${aboutPageClass}__experts-container`}>
@@ -352,7 +353,7 @@ export default async function AboutPage() {
                                     Get Involved
                                 </h3>
                                 <p className={textClass}>
-                                    NF Simplified is 100% volunteer-led, and
+                                    {tenant.name} is 100% volunteer-led, and
                                     we&apos;re always looking for passionate
                                     people to join us! Whether you&apos;re into
                                     web development, research, database
@@ -394,7 +395,7 @@ export default async function AboutPage() {
                             </h3>
                             <p className={textClass}>
                                 We&apos;re proud to work alongside and be
-                                supported by organizations dedicated to the NF
+                                supported by organizations dedicated to the {tenant.shortName}
                                 community:
                             </p>
                         </div>
@@ -403,11 +404,11 @@ export default async function AboutPage() {
                                 href="https://nfnetwork.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`${aboutPageClass}__supporter-logo nf-network`}
+                                className={`${aboutPageClass}__supporter-logo ${tenant.shortName.toLowerCase()}-network`}
                             >
                                 <Image
                                     src={nfNetwork}
-                                    alt="NF-Network Logo"
+                                    alt="{tenant.shortName}-Network Logo"
                                     width={500}
                                     height={100}
                                     className={`${aboutPageClass}__logo-image`}
@@ -416,7 +417,7 @@ export default async function AboutPage() {
                                     <p
                                         className={`${aboutPageClass}__logo-name`}
                                     >
-                                        NF-Network
+                                        {tenant.shortName}-Network
                                     </p>
                                     <ExternalLink
                                         size={16}

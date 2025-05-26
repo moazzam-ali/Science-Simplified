@@ -2,12 +2,13 @@ import "./PrivacyPolicy.scss";
 
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
+import { tenant } from "@/lib/config";
 
 const sections = [
     {
         title: "Introduction",
         content:
-            "Welcome to Neurofibromatosis Simplified. This Privacy Policy explains how we collect, use, and protect your information when you visit our website. By accessing or using our services, you agree to the terms of this policy.",
+            `Welcome to ${tenant.name}. This Privacy Policy explains how we collect, use, and protect your information when you visit our website. By accessing or using our services, you agree to the terms of this policy.`,
     },
     {
         title: "Information We Collect",

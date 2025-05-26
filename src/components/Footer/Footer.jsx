@@ -4,6 +4,7 @@ import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"; // Using 
 import "./Footer.scss";
 import Image from "next/image";
 import brandlogo from "../../assets/navbrand.png";
+import { tenant } from "@/lib/config";
 
 const Footer = () => {
     return (
@@ -18,9 +19,9 @@ const Footer = () => {
                         />
                         <p className="footer__description">
                             Provide accessible, up-to-date, and comprehensive
-                            information about Neurofibromatosis (NF) to
+                            information about {tenant.disease} ({tenant.shortName}) to
                             patients, families, and caregivers. We aim to
-                            empower those affected by NF with the knowledge and
+                            empower those affected by {tenant.shortName} with the knowledge and
                             resources they need to navigate their journey.
                         </p>
                         <div className="footer__social">

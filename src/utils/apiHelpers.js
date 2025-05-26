@@ -1,5 +1,6 @@
 import openai from "@/lib/openai";
 import { marked } from "marked"; // You may need to install this package
+import { tenant } from "@/lib/config";
 
 export async function summarizeArticle(content) {
     try {
@@ -23,39 +24,39 @@ export async function summarizeArticle(content) {
 }
 
 export async function simplifyArticle(content, lengthString) { 
-    //Emphasize innovation, significance, findings and impact as well as any relevance to persons with neurofibromatosis or schwannomatosis.Please explain key medical terms if they show up and include limitations of the study, and
+    //Emphasize innovation, significance, findings and impact as well as any relevance to persons with {tenant.disease.toLowerCase()} or schwannomatosis. Please explain key medical terms if they show up and include limitations of the study, and
     try {
         var prompt = `You simplify scientific articles into a science article that would be understandable to an 8th grader, but with medical terms explained. Briefly mention the authors of the study and the year it was published, with "Original article by [...]" as the first line. Dont include the title. However, this should still be structured as an casual science article, but each paragraph should be medium length. Include limitations of the study if applicable..
                      Respond using html formatting, and add in headers sized and different sized text to be visually appealing, but still in article style. Use different styles to make it look really nice, like paragraph headings, etc. Any css should start with "apicss-[name]" as to not interfere with existing css. "Make sure to add in sufficient whitespace for clarity, such as lines after paragraphs, bigger headers for broader section titles, etc. This will be on a HTML page, but dont start your response with ''' html. Likely, these will be multiple long paragraphs of text. Don't include a copyright sign in the end of the article.`;
         var exampleoutput = `Here is an example output:
-        Improving the Quality of Life for People with NF1: A New Approach to Addressing Appearance Concerns in Clinical Trials
-        For people living with Neurofibromatosis type 1 (NF1), the visible impact of the condition can be as challenging as its physical symptoms. Tumors like cutaneous and plexiform neurofibromas, while non-cancerous, often lead to visible differences that can deeply affect confidence, emotional well-being, and quality of life.
+        Improving the Quality of Life for People with {tenant.shortName}1: A New Approach to Addressing Appearance Concerns in Clinical Trials
+        For people living with {tenant.disease} type 1 ({tenant.shortName}1), the visible impact of the condition can be as challenging as its physical symptoms. Tumors like cutaneous and plexiform neurofibromas, while non-cancerous, often lead to visible differences that can deeply affect confidence, emotional well-being, and quality of life.
 
-        Despite these significant impacts, most clinical trials for NF1 treatments focus on reducing tumor size, often overlooking how patients feel about their appearance. A recent study led by Dr. Vanessa Merker and the REiNS International Collaboration sought to change this by identifying tools to measure appearance-related concerns in NF1 clinical trials. The goal? To ensure new treatments don’t just shrink tumors but also improve the lives of those affected.
+        Despite these significant impacts, most clinical trials for {tenant.shortName}1 treatments focus on reducing tumor size, often overlooking how patients feel about their appearance. A recent study led by Dr. Vanessa Merker and the REiNS International Collaboration sought to change this by identifying tools to measure appearance-related concerns in {tenant.shortName}1 clinical trials. The goal? To ensure new treatments don't just shrink tumors but also improve the lives of those affected.
 
         Why This Matters
-        NF1 tumors can cause visible disfigurements, leading many individuals to feel self-conscious, unhappy, or socially isolated. While reducing tumor size is a step forward, it doesn’t always correlate with how a person feels about their appearance. This gap can hinder the full understanding of a treatment's impact.
+        {tenant.shortName}1 tumors can cause visible disfigurements, leading many individuals to feel self-conscious, unhappy, or socially isolated. While reducing tumor size is a step forward, it doesn't always correlate with how a person feels about their appearance. This gap can hinder the full understanding of a treatment's impact.
         The U.S. Food and Drug Administration (FDA) has emphasized the need for clinical trials to measure not just physical changes but also improvements in how patients feel and function. This is where patient-reported outcome (PRO) measures come in—tools that capture patients' perspectives on their experiences.
 
         A Tool for the Job
-        The REiNS team reviewed over 30 existing PRO measures to find one suitable for assessing appearance concerns in NF1. Their top recommendation? The FACE-Q Craniofacial Module - Appearance Distress Scale.
-        This scale evaluates social and psychological concerns tied to appearance, such as feeling self-conscious, avoiding social situations, or being unhappy about how one looks. Although originally developed for individuals with facial differences, it could potentially be adapted for NF1 patients with tumors on various parts of the body. It is brief, easy to use, and suitable for both children and adults.
+        The REiNS team reviewed over 30 existing PRO measures to find one suitable for assessing appearance concerns in {tenant.shortName}1. Their top recommendation? The FACE-Q Craniofacial Module - Appearance Distress Scale.
+        This scale evaluates social and psychological concerns tied to appearance, such as feeling self-conscious, avoiding social situations, or being unhappy about how one looks. Although originally developed for individuals with facial differences, it could potentially be adapted for {tenant.shortName}1 patients with tumors on various parts of the body. It is brief, easy to use, and suitable for both children and adults.
 
         Strengths and Limitations
         The FACE-Q scale offers several advantages:
         Ease of Use: It takes only five minutes to complete.
-        Proven Reliability: It has undergone rigorous testing and includes NF1 patients in its validation sample.
+        Proven Reliability: It has undergone rigorous testing and includes {tenant.shortName}1 patients in its validation sample.
         Inclusive Design: It is appropriate for a wide age range and has versions in multiple languages.
-        However, the scale isn’t without limitations. It hasn’t been tested extensively in older adults or patients with non-facial tumors. Additionally, its sensitivity to changes over time, such as those resulting from treatment, remains unproven. Further research is needed to adapt and validate the scale specifically for NF1 clinical trials.
+        However, the scale isn't without limitations. It hasn't been tested extensively in older adults or patients with non-facial tumors. Additionally, its sensitivity to changes over time, such as those resulting from treatment, remains unproven. Further research is needed to adapt and validate the scale specifically for {tenant.shortName}1 clinical trials.
 
         A Step Toward Patient-Centered Care
-        This study marks an important shift in NF1 research. By focusing on appearance-related concerns, researchers can better address the needs of patients, ensuring that treatments don’t just target tumors but also improve self-esteem and emotional well-being.
-        Involving patients in the research process was key to the study’s success. Patient representatives played a crucial role in identifying meaningful ways to measure appearance concerns and ensuring that tools like the FACE-Q scale reflect the lived experiences of those with NF1.
+        This study marks an important shift in {tenant.shortName}1 research. By focusing on appearance-related concerns, researchers can better address the needs of patients, ensuring that treatments don't just target tumors but also improve self-esteem and emotional well-being.
+        Involving patients in the research process was key to the study's success. Patient representatives played a crucial role in identifying meaningful ways to measure appearance concerns and ensuring that tools like the FACE-Q scale reflect the lived experiences of those with {tenant.shortName}1.
 
         Looking Forward
-        The FACE-Q Craniofacial Module - Appearance Distress Scale is a promising starting point for capturing the psychosocial impacts of NF1-related tumors. Future research will refine and validate this tool while exploring additional ways to measure how NF1 affects quality of life.
+        The FACE-Q Craniofacial Module - Appearance Distress Scale is a promising starting point for capturing the psychosocial impacts of {tenant.shortName}1-related tumors. Future research will refine and validate this tool while exploring additional ways to measure how {tenant.shortName}1 affects quality of life.
 
-        For individuals with NF1, this focus on appearance and well-being represents an important step toward treatments that address their full range of needs, offering hope for a brighter, more confident future.`
+        For individuals with {tenant.shortName}1, this focus on appearance and well-being represents an important step toward treatments that address their full range of needs, offering hope for a brighter, more confident future.`
         content = prompt + exampleoutput + ". Here is what you need to simplify: " + content;
         const response = await openai.chat.completions.create({
             model: "o1-mini", //GPT Model

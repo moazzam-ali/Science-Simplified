@@ -11,30 +11,28 @@ import {
 import { Suspense } from "react";
 
 import Loader from "@/app/loading";
+import { tenant } from "@/lib/config";
 
 const faqsData = [
     {
-        question: "What is Neurofibromatosis Simplified?",
-        answer: "Neurofibromatosis Simplified is a platform dedicated to providing accessible, up-to-date, and comprehensive information about Neurofibromatosis (NF) for patients, families, and caregivers.",
+        question: `What is ${tenant.name}?`,
+        answer: `${tenant.name} is a platform dedicated to providing accessible, up-to-date, and comprehensive information about ${tenant.disease} (${tenant.shortName}) for patients, families, and caregivers.`,
     },
     {
-        question: "Who is Neurofibromatosis Simplified for?",
-        answer: "Our website is designed for individuals affected by NF, including patients, families, and caregivers, to help them access information and resources that aid in understanding and managing NF.",
+        question: `Who is ${tenant.name} for?`,
+        answer: `Our website is designed for individuals affected by ${tenant.shortName}, including patients, families, and caregivers, to help them access information and resources that aid in understanding and managing ${tenant.shortName}.`,
     },
     {
-        question:
-            "What type of information does Neurofibromatosis Simplified provide?",
-        answer: "We offer simplified articles and resources on Neurofibromatosis, all reviewed by NF experts from REiNS, to ensure accuracy and accessibility for all users.",
+        question: `What type of information does ${tenant.name} provide?`,
+        answer: `We offer simplified articles and resources on ${tenant.disease}, all reviewed by ${tenant.shortName} experts from REiNS, to ensure accuracy and accessibility for all users.`,
     },
     {
-        question:
-            "Who reviews the information on Neurofibromatosis Simplified?",
-        answer: "All articles and resources on our website are (soon to be) reviewed by NF experts from REiNS, ensuring that the information provided is accurate, reliable, and up-to-date.",
+        question: `Who reviews the information on ${tenant.name}?`,
+        answer: `All articles and resources on our website are (soon to be) reviewed by ${tenant.shortName} experts from REiNS, ensuring that the information provided is accurate, reliable, and up-to-date.`,
     },
     {
-        question:
-            "How can Neurofibromatosis Simplified help those living with NF?",
-        answer: "We empower those affected by NF with knowledge, offering educational articles and a supportive community to help navigate their journey with Neurofibromatosis.",
+        question: `How can ${tenant.name} help those living with ${tenant.shortName}?`,
+        answer: `We empower those affected by ${tenant.shortName} with knowledge, offering educational articles and a supportive community to help navigate their journey with ${tenant.disease}.`,
     },
 ];
 
