@@ -27,11 +27,11 @@ export const sites = {
       logoPath: "/sites/EB/logo.svg",
       featureX: false,
       theme: {
-        primary: "#b14ca4",
-        primaryDark: "#3e4354",
+        primary: "#ed1e87",
+        primaryDark: "#871750",
         lightGrey: "#f5f5f5",
-        text: "#0b1618",
-        background: "#fff8fe"
+        text: "#484753",
+        background: "#ffffff"
       },
       homeHeroPath: "home-hero-illustration.png",
       navBrandPath: "sseblogo.jpg",
