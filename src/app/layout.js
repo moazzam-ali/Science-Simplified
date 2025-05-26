@@ -12,9 +12,9 @@ const outfitFont = Outfit({
 });
 
 export const metadata = {
-    title: "NF Simplified",
+    title: `${tenant.name} Simplified`,
     description:
-        "Neurofibromatosis Simplified - Get simplified information about Neurofibromatosis",
+        `${tenant.name} Simplified - Get simplified information about ${tenant.name}`,
 };
 
 export default function RootLayout({ children }) {
