@@ -11,8 +11,7 @@
 
         padding-block: 8rem;
 
-        background-image: url("../../../assets/${tenant}/authentication-pages-bg-top.webp"),
-            url("../../../assets/${tenant}/authentication-pages-bg-bottom.webp");
+        background-image: var(--auth-bg-top), var(--auth-bg-bottom);
         background-repeat: no-repeat;
         background-position: top left, bottom right;
         background-size: contain;

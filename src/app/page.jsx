@@ -9,6 +9,7 @@ import HomeServiceBanner from "@/components/HomeServiceBanner/HomeServiceBanner"
 import { useRouter } from "next/navigation";
 
 import useAuthStore from "@/store/useAuthStore";
+import { useEffect } from "react";
 
 // custom components
 import SubscriptionBanner from "@/components/SubscriptionBanner/SubscriptionBanner";
@@ -27,6 +28,10 @@ export default function Home() {
         // Navigate to the article search page with the query
         router.push(`/articles}`);
     };
+
+    useEffect(() => {
+        document.documentElement.style.setProperty('--hero-illustration', `url(/assets/${tenant.shortName}/home/home-hero-illustration.webp)`);
+    }, []);
 
     return (
         <main className="home">

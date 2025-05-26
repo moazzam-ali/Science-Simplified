@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./LoginForm.scss";
 import Navbar from "@/components/Navbar/Navbar";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
+import { tenant } from "@/lib/config";
 
 export default function LoginForm() {
     const [email, setEmail] = useState("");
@@ -33,6 +34,11 @@ export default function LoginForm() {
             setIsLoading(false);
         }
     };
+
+    useEffect(() => {
+        document.documentElement.style.setProperty('--auth-bg-top', `url(/assets/${tenant.shortName}/authentication-pages-bg-top.webp)`);
+        document.documentElement.style.setProperty('--auth-bg-bottom', `url(/assets/${tenant.shortName}/authentication-pages-bg-bottom.webp)`);
+    }, []);
 
     return (
         <main className="login-page">

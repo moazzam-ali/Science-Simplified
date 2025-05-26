@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SignupForm.scss";
 import Navbar from "@/components/Navbar/Navbar";
 import { Eye, EyeOff, Loader2 } from "lucide-react"; // Import Loader2 for loading spinner
@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button"; // Assuming you are using the same Button component as in LoginForm
+import { tenant } from "@/lib/config";
 
 export default function CreateAccountForm() {
     const [formData, setFormData] = useState({
@@ -74,6 +75,11 @@ export default function CreateAccountForm() {
             setShowConfirmPassword(!showConfirmPassword);
         }
     };
+
+    useEffect(() => {
+        document.documentElement.style.setProperty('--auth-bg-top', `url(/assets/${tenant.shortName}/authentication-pages-bg-top.webp)`);
+        document.documentElement.style.setProperty('--auth-bg-bottom', `url(/assets/${tenant.shortName}/authentication-pages-bg-bottom.webp)`);
+    }, []);
 
     return (
         <main className="signup-page">

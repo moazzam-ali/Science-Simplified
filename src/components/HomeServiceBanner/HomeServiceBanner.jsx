@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./HomeServiceBanner.scss";
 import Link from "next/link";
 import { tenant } from "@/lib/config";
 
 function HomeServiceBanner() {
+    useEffect(() => {
+        document.documentElement.style.setProperty('--cta-background', `url(/assets/${tenant.shortName}/home/home-cta-1-bg.webp)`);
+    }, []);
+
     return (
         <div className="service-banner">
             <div className="service-banner__content">

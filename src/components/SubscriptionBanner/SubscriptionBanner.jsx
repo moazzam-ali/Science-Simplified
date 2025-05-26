@@ -1,8 +1,15 @@
 import "./SubscriptionBanner.scss";
 import Link from "next/link";
 import { MessageSquare } from "lucide-react"; // Importing icon from Lucide
+import { useEffect } from "react";
+import { tenant } from "@/lib/config";
 
 const SubscriptionBanner = () => {
+    useEffect(() => {
+        document.documentElement.style.setProperty('--subscription-bg-left', `url(/assets/${tenant.shortName}/subscription-banner-bg-left.webp)`);
+        document.documentElement.style.setProperty('--subscription-bg-right', `url(/assets/${tenant.shortName}/subscription-banner-bg-right.webp)`);
+    }, []);
+
     return (
         <div className="subscription-banner">
             <h2 className="heading-tertiary w-800">Get in Touch</h2>
