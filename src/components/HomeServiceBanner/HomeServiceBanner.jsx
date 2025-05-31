@@ -5,7 +5,7 @@ import { tenant } from "@/lib/config";
 
 function HomeServiceBanner() {
     useEffect(() => {
-        document.documentElement.style.setProperty('--cta-background', `url(/assets/${tenant.shortName}/home/home-cta-1-bg.webp)`);
+        document.documentElement.style.setProperty('--cta-background', `url(/assets/${tenant.shortName}/home/${tenant.homeExploreAllBG})`);
     }, []);
 
     return (
