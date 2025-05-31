@@ -77,8 +77,8 @@ export default function CreateAccountForm() {
     };
 
     useEffect(() => {
-        document.documentElement.style.setProperty('--auth-bg-top', `url(/assets/${tenant.shortName}/authentication-pages-bg-top.webp)`);
-        document.documentElement.style.setProperty('--auth-bg-bottom', `url(/assets/${tenant.shortName}/authentication-pages-bg-bottom.webp)`);
+        document.documentElement.style.setProperty('--auth-bg-top', `url(/assets/${tenant.shortName}/${tenant.loginBGTop})`);
+        document.documentElement.style.setProperty('--auth-bg-bottom', `url(/assets/${tenant.shortName}/${tenant.loginBGBottom})`);
     }, []);
 
     return (

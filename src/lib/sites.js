@@ -22,6 +22,8 @@ export const sites = {
       articleThumbnailPlaceholder: "NF_articleThumbnailPlaceholder.webp", //articleThumbnailPlaceholder
       contactUsBGLeft: "NF_contactUsBGLeft.webp", //contactUsBGLeft
       contactUsBGRight: "NF_contactUsBGRight.webp", //contactUsBGRight
+      loginBGTop: "NF_loginBGTop.webp", //loginBGTop
+      loginBGBottom: "EB_loginBGBottom.webp", //loginBGTop
     },
     EB: {
       name: "EB Simplified",
@@ -37,7 +39,7 @@ export const sites = {
         lightGrey: "#f5f5f5",
         text: "#484753",
         background: "#ffffff",
-        contactUsColor: "#ed1e87", //contactUsColor
+        contactUsColor: "#e89ec3", //contactUsColor
         authorTextColor: "#4c85b1", //authorTextColor
       },
       homeBG: "EB_homeBG.png", //home/homeBG
@@ -46,7 +48,8 @@ export const sites = {
       articleThumbnailPlaceholder: "EB_articleThumbnailPlaceholder.jpg", //articleThumbnailPlaceholder
       contactUsBGLeft: "EB_contactUsBGLeft.png", //contactUsBGLeft
       contactUsBGRight: "EB_contactUsBGRight.png", //contactUsBGRight
-      
+      loginBGTop: "EB_loginBGTop.webp", //loginBGTop
+      loginBGBottom: "EB_loginBGBottom.webp", //loginBGTop
     },
     // …add more here…
   };
