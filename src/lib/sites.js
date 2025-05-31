@@ -14,12 +14,12 @@ export const sites = {
         text: "#0b1618",
         background: "#f8fdff"
       },
-      homeBG: "NF_homeBG.png", //home/homeBG
+      homeBG: "NF_homeBG.webp", //home/homeBG
       homeExploreAllBG: "NF_ExploreAllBG.webp", //home/homeExploreAllBG
       logoWithText: "NF_logoWithText.png", //logoWithText
       articleThumbnailPlaceholder: "article-thumbnail-placeholder.webp", //articleThumbnailPlaceholder
-      contactUsBGLeft: "subscription-banner-bg-left.webp", //contactUsBGLeft
-      contactUsBGRight: "subscription-banner-bg-right.webp", //contactUsBGRight
+      contactUsBGLeft: "NF_contactUsBGLeft.png", //contactUsBGLeft
+      contactUsBGRight: "NF_contactUsBGRight.png", //contactUsBGRight
       contactUsColor: "#4cb19f", //contactUsColor
     },
     EB: {
