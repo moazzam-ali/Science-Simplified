@@ -19,7 +19,8 @@ module.exports = {
                 'light-grey': 'var(--color-light-grey)',
                 text: 'var(--color-text)',
                 background: 'var(--color-background)',
-				contactUsColor: 'var(--color-contactUsColor)'
+				contactUsColor: 'var(--color-contactUsColor)',
+				authorTextColor: 'var(--color-author-text-color)'
     		},
     		keyframes: {
     			'accordion-down': {

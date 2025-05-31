@@ -26,6 +26,7 @@ const FallbackAuthorImage = ({ authorName }) => {
 
 const articleThumbnailPlaceholder = `/assets/${tenant.shortName}/${tenant.articleThumbnailPlaceholder}`;
 
+
 function ArticleCard({
     id,
     imageUrl,

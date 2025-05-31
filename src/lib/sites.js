@@ -14,6 +14,7 @@ export const sites = {
         text: "#0b1618",
         background: "#f8fdff",
         contactUsColor: "#4cb19f", //contactUsColor
+        authorTextColor: "#4cb19f", //authorTextColor
       },
       homeBG: "NF_homeBG.webp", //home/homeBG
       homeExploreAllBG: "NF_ExploreAllBG.webp", //home/homeExploreAllBG
@@ -37,6 +38,7 @@ export const sites = {
         text: "#484753",
         background: "#ffffff",
         contactUsColor: "#ed1e87", //contactUsColor
+        authorTextColor: "#4c85b1", //authorTextColor
       },
       homeBG: "EB_homeBG.png", //home/homeBG
       homeExploreAllBG: "EB_ExploreAllBG.png", //home/homeExploreAllBG

@@ -12,6 +12,7 @@ export default function ThemeProvider({ children }) {
         document.documentElement.style.setProperty('--color-text', tenant.theme.text);
         document.documentElement.style.setProperty('--color-background', tenant.theme.background);
         document.documentElement.style.setProperty('--color-contactUsColor', tenant.theme.contactUsColor);
+        document.documentElement.style.setProperty('--color-author-text-color', tenant.theme.authorTextColor);
     }, []);
 
     return children;
