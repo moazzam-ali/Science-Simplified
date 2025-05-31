@@ -3,7 +3,7 @@
     border-radius: 2rem;
     padding: 4rem 4rem 7rem;
 
-    background: var(--subscription-bg-left), var(--subscription-bg-right), linear-gradient(90deg, #4cb19f 0%, #4cb19f 100%);
+    background: var(--subscription-bg-left), var(--subscription-bg-right), linear-gradient(90deg, var(--color-contactUsColor), 0%, var(--color-contactUsColor), 100%);
 
     background-repeat: no-repeat;
     background-position: bottom left, top right;
@@ -25,7 +25,7 @@
         padding: 1.2rem 2rem;
         border-radius: 8px;
         font-size: 1.6rem;
-        color: var(--color-contactUsColor);
+        color: #4cb19f;
         background-color: #fff;
         text-decoration: none;
         display: flex;
