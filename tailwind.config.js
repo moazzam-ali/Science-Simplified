@@ -18,7 +18,8 @@ module.exports = {
                 'primary-dark': 'var(--color-primary-dark)',
                 'light-grey': 'var(--color-light-grey)',
                 text: 'var(--color-text)',
-                background: 'var(--color-background)'
+                background: 'var(--color-background)',
+				contactUsColor: 'var(--color-contactUsColor)'
     		},
     		keyframes: {
     			'accordion-down': {

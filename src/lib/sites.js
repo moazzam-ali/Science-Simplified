@@ -20,6 +20,7 @@ export const sites = {
       articleThumbnailPlaceholder: "article-thumbnail-placeholder.webp", //articleThumbnailPlaceholder
       contactUsBGLeft: "subscription-banner-bg-left.webp", //contactUsBGLeft
       contactUsBGRight: "subscription-banner-bg-right.webp", //contactUsBGRight
+      contactUsColor: "#4cb19f", //contactUsColor
     },
     EB: {
       name: "EB Simplified",
@@ -42,6 +43,7 @@ export const sites = {
       articleThumbnailPlaceholder: "EB_articleThumbnailPlaceholder.jpg", //articleThumbnailPlaceholder
       contactUsBGLeft: "EB_contactUsBGLeft.png", //contactUsBGLeft
       contactUsBGRight: "EB_contactUsBGRight.png", //contactUsBGRight
+      contactUsColor: "#ed1e87", //contactUsColor
     },
     // …add more here…
   };
