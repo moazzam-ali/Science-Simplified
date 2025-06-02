@@ -12,11 +12,10 @@ function HomeServiceBanner() {
         <div className="service-banner">
             <div className="service-banner__content">
                 <h2 className="heading-quaternary">
-                    We give knowledge to {tenant.shortName} patients, families, and caregivers{" "}
+                    {tenant.text_exploreAllTitle}{" "}
                 </h2>
                 <p className="body-large color-light-grey w-300">
-                    Collection of simplified {tenant.shortName} articles certified by experts.{" "}
-                    <span className="w-600 ">Powered by REiNS.</span>
+                    {tenant.text_exploreAllDescription}
                 </p>
             </div>
             <Link href="/articles" className="btn btn-primary-white">

@@ -24,6 +24,9 @@ export const sites = {
       contactUsBGRight: "NF_contactUsBGRight.webp", //contactUsBGRight
       loginBGTop: "NF_loginBGTop.webp", //loginBGTop
       loginBGBottom: "EB_loginBGBottom.webp", //loginBGTop
+
+      text_exploreAllTitle: "We give knowledge to NF patients, families, and caregivers",
+      text_exploreAllDescription: "Collection of simplified NF articles certified by experts. Powered by REiNS.",
     },
     EB: {
       name: "EB Simplified",
@@ -50,6 +53,8 @@ export const sites = {
       contactUsBGRight: "EB_contactUsBGRight.png", //contactUsBGRight
       loginBGTop: "EB_loginBGTop.webp", //loginBGTop
       loginBGBottom: "EB_loginBGBottom.webp", //loginBGTop
+      text_exploreAllTitle: "We give knowledge to EB patients, families, and caregivers",
+      text_exploreAllDescription: "Collection of simplified EB articles certified by experts.",
     },
     // …add more here…
   };
