@@ -39,7 +39,7 @@ export const sites = {
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
       logoPath: "/sites/EB/logo.svg",
       featureX: false,
-      theme: {
+      theme: { // Theme
         primary: "#ed1e87",
         primaryDark: "#871750",
         lightGrey: "#f5f5f5",
@@ -49,8 +49,10 @@ export const sites = {
         authorTextColor: "#4c85b1", //authorTextColor
         footerBGColor: "#f2e6f8", //footerBGColor
       },
+      // Images (Home)
       homeBG: "EB_croppedbanner.png", //home/homeBG
       homeExploreAllBG: "EB_ExploreAllBG.png", //home/homeExploreAllBG
+      // Images (General)
       logoWithText: "EB_logoWithText.png", //logoWithText
       articleThumbnailPlaceholder: "EB_articleThumbnailPlaceholder.jpg", //articleThumbnailPlaceholder
       contactUsBGLeft: "EB_contactUsBGLeft.png", //contactUsBGLeft
@@ -58,7 +60,7 @@ export const sites = {
       loginBGTop: "EB_loginBGTop.webp", //loginBGTop
       loginBGBottom: "EB_loginBGBottom.webp", //loginBGTop
 
-      //text
+      //Text
       text_homeTitleDescription: "Collection of simplified EB articles certified by experts. Powered by Innovation.",
       text_exploreAllTitle: "We give knowledge to EB patients, families, and caregivers",
       text_exploreAllDescription: "Collection of simplified EB articles certified by experts.",
