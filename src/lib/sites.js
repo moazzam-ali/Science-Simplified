@@ -37,14 +37,23 @@ export const sites = {
       about_teamMember1Name: "Kyle Wan",
       about_teamMember1Title: "Founder & Lead",
       about_teamMember1Bio:  "Committed to building a user-friendly platform to help researchers share clear, accurate summaries with the NF community.",
+
       about_teamMember2Image: "vanessa.png",
       about_teamMember2Name: "Vanessa Merker, Ph.D.",
       about_teamMember2Title: "Faculty Advisor",
       about_teamMember2Bio: "Assistant Professor of Neurology at Harvard Medical School. Specializes in patient-centered research and improving care in Neurofibromatosis and related conditions.",
+
       about_teamMember3Image: "roxana.png",
       about_teamMember3Name: "Roxana Daneshjou, MD Ph.D.",
       about_teamMember3Title: "Faculty Advisor",
       about_teamMember3Bio: "Assistant Professor of Biomedical Data Science, Stanford University. Specializes in building Fair and trustworthy AI for healthcare.",
+
+      about_mission1: "NF Simplified is dedicated to making scientific research more accessible and understandable for individuals and families affected by NF1, NF2 and schwannomatosis.",
+      about_mission2: "We believe everyone deserves access to clear, reliable information about the latest advances in NF research. By sharing simplified and accurate summaries of scientific findings, we aim to empower the NF community to make informed decisions, stay updated on medical progress, and feel connected to the breakthroughs shaping their care.",
+      about_teamDescription: "We are a passionate, volunteer-led team of scientists, clinicians, developers, and advocates working together to bridge the gap between research and the Neurofibromatosis community.",
+      about_contributorsDescription: "We're a growing network of scientists who volunteer to edit article summaries and share the amazing research being done in Neurofibromatosis and Schwannomatosis with the community.",
+      about_getInvolvedDescription: "NF Simplified is 100% volunteer-led, and we're always looking for passionate people to join us! Whether you're into web development, research, database management, design, or community outreach—there's a place for you on our team.",
+      
     },
     EB: {
       name: "EB Simplified",
@@ -91,11 +100,19 @@ export const sites = {
       about_teamMember2Name: "Kimiya Aframian",
       about_teamMember2Title: "Medical Outreach Lead",
       about_teamMember2Bio: "Placeholder Bio",
-      
+
       about_teamMember3Image: "jeantang.webp",
       about_teamMember3Name: "Jean Tang, MD Ph.D.",
       about_teamMember3Title: "Faculty Advisor",
       about_teamMember3Bio: "Professor of Dermatology at Stanford University. Specializes in patient-centered research and clinical therapeutic development in Epidermolysis Bullosa and other monogenic disorders.",
+
+      about_mission1: "EB Simplified is dedicated to making scientific research more accessible and understandable for individuals and families affected by EB.",
+      about_mission2: "We believe everyone deserves access to clear, reliable information about the latest advances in EB research. By sharing simplified and accurate summaries of scientific findings, we aim to empower the EB community to make informed decisions, stay updated on medical progress, and feel connected to the breakthroughs shaping their care.",
+      about_teamDescription: "We are a passionate, volunteer-led team of scientists, clinicians, developers, and advocates working together to bridge the gap between research and the EB community.",
+      about_contributorsDescription: "We're a growing network of scientists who volunteer to edit article summaries and share the amazing research being done in Epidermolysis Bullosa with the community.",
+      about_getInvolvedDescription: "EB Simplified is 100% volunteer-led, and we're always looking for passionate people to join us! Whether you're into web development, research, database management, design, or community outreach—there's a place for you on our team.",
+
+      
     },
 
   };

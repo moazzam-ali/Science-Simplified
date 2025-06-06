@@ -78,22 +78,10 @@ export default async function AboutPage() {
                                     Our Mission
                                 </h2>
                                 <p className="body-large">
-                                    {tenant.name} is dedicated to making
-                                    scientific research more accessible and
-                                    understandable for individuals and families
-                                    affected by {tenant.disease.toLowerCase()} ({tenant.shortName}1, {tenant.shortName}2) and
-                                    schwannomatosis.
+                                    {tenant.about_mission1}
                                 </p>
                                 <p className="body-regular">
-                                    We believe everyone deserves access to
-                                    clear, reliable information about the latest
-                                    advances in {tenant.shortName} research. By sharing
-                                    simplified and accurate summaries of
-                                    scientific findings, we aim to empower the
-                                    {tenant.shortName} community to make informed decisions,
-                                    stay updated on medical progress, and feel
-                                    connected to the breakthroughs shaping their
-                                    care.
+                                    {tenant.about_mission2}
                                 </p>
                             </div>
                             <div
@@ -116,10 +104,7 @@ export default async function AboutPage() {
                     >
                         <h2 className={sectionTitleClass}>Our Team</h2>
                         <p className={textClass}>
-                            We are a passionate, volunteer-led team of
-                            scientists, clinicians, developers, and advocates
-                            working together to bridge the gap between research
-                            and the {tenant.shortName} community.
+                            {tenant.about_teamDescription}
                         </p>
 
                         <h3 className={`${aboutPageClass}__team-subtitle`}>
@@ -238,10 +223,7 @@ export default async function AboutPage() {
                             Scientific Contributors
                         </h3>
                         <p className={textClass}>
-                            We&apos;re a growing network of scientists who
-                            volunteer to edit article summaries and share the
-                            amazing research being done in {tenant.disease} and
-                            Schwannomatosis with the community.
+                            {tenant.about_contributorsDescription}
                         </p>
                         <div className={`${aboutPageClass}__experts-container`}>
                             <Marquee
@@ -343,13 +325,7 @@ export default async function AboutPage() {
                                     Get Involved
                                 </h3>
                                 <p className={textClass}>
-                                    {tenant.name} is 100% volunteer-led, and
-                                    we&apos;re always looking for passionate
-                                    people to join us! Whether you&apos;re into
-                                    web development, research, database
-                                    management, design, or community
-                                    outreach—there&apos;s a place for you on our
-                                    team.
+                                    {tenant.about_getInvolvedDescription}
                                 </p>
                                 <Link
                                     href="/contact"
