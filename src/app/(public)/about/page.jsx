@@ -8,9 +8,9 @@ import Marquee from "react-fast-marquee";
 import { tenant } from "@/lib/config";
 
 // images
-const kyle = `/assets/${tenant.shortName}/about/kyle.png`;
-const vanessa = `/assets/${tenant.shortName}/about/vanessa.png`;
-const roxana = `/assets/${tenant.shortName}/about/roxana.png`;
+// const kyle = `/assets/${tenant.shortName}/about/kyle.png`;
+// const vanessa = `/assets/${tenant.shortName}/about/vanessa.png`;
+// const roxana = `/assets/${tenant.shortName}/about/roxana.png`;
 const nfNetwork = `/assets/${tenant.shortName}/about/nf-network.png`;
 const reins = `/assets/${tenant.shortName}/about/reins.png`;
 const expertPlaceholder = `/assets/${tenant.shortName}/about/expert-placeholder.png`;
@@ -365,18 +365,19 @@ export default async function AboutPage() {
                         </div>
                         <div className={`${aboutPageClass}__supporters-logos`}>
                             <Link
-                                href="https://nfnetwork.com"
+                                href={tenant.about_supporter1Link}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`${aboutPageClass}__supporter-logo ${tenant.shortName.toLowerCase()}-network`}
                             >
                                 <Image
-                                    src={nfNetwork}
-                                    alt="{tenant.shortName}-Network Logo"
-                                    width={500}
-                                    height={100}
+                                    src={`/assets/${tenant.shortName}/about/${tenant.about_supporter1Logo}`}
+                                    alt={tenant.about_supporter1Name}
+                                    width={tenant.about_supporter1Width}
+                                    height={tenant.about_supporter1Height}
                                     className={`${aboutPageClass}__logo-image`}
                                 />
+                                
                                 <div className={`${aboutPageClass}__logo-link`}>
                                     <p
                                         className={`${aboutPageClass}__logo-name`}
@@ -390,16 +391,16 @@ export default async function AboutPage() {
                                 </div>
                             </Link>
                             <Link
-                                href="https://ccrod.cancer.gov/confluence/"
+                                href={tenant.about_supporter2Link}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`${aboutPageClass}__supporter-logo`}
                             >
-                                <Image
-                                    src={reins}
-                                    alt="REiNS Logo"
-                                    width={200}
-                                    height={100}
+                                <Image 
+                                    src={`/assets/${tenant.shortName}/about/${tenant.about_supporter2Logo}`}
+                                    alt={tenant.about_supporter2Name}
+                                    width={tenant.about_supporter2Width}
+                                    height={tenant.about_supporter2Height}
                                     className={`${aboutPageClass}__logo-image`}
                                 />
                                 <div className={`${aboutPageClass}__logo-link`}>

@@ -48,6 +48,19 @@ export const sites = {
       about_teamMember3Title: "Faculty Advisor",
       about_teamMember3Bio: "Assistant Professor of Biomedical Data Science, Stanford University. Specializes in building Fair and trustworthy AI for healthcare.",
 
+
+      about_supporter1Logo: "nf-network.png",
+      about_supporter1Name: "NF-Network",
+      about_supporter1Width: 500,
+      about_supporter1Height: 100,
+      about_supporter1Link: "https://nfnetwork.com",
+
+      about_supporter2Logo: "reins.png",
+      about_supporter2Name: "REiNS",
+      about_supporter2Width: 200,
+      about_supporter2Height: 100,
+      about_supporter2Link: "https://ccrod.cancer.gov/confluence/",
+
       about_mission1: "NF Simplified is dedicated to making scientific research more accessible and understandable for individuals and families affected by NF1, NF2 and schwannomatosis.",
       about_mission2: "We believe everyone deserves access to clear, reliable information about the latest advances in NF research. By sharing simplified and accurate summaries of scientific findings, we aim to empower the NF community to make informed decisions, stay updated on medical progress, and feel connected to the breakthroughs shaping their care.",
       about_teamDescription: "We are a passionate, volunteer-led team of scientists, clinicians, developers, and advocates working together to bridge the gap between research and the Neurofibromatosis community.",
@@ -107,6 +120,18 @@ export const sites = {
       about_teamMember3Name: "Jean Tang, MD Ph.D.",
       about_teamMember3Title: "Faculty Advisor",
       about_teamMember3Bio: "Professor of Dermatology at Stanford University. Specializes in patient-centered research and clinical therapeutic development in Epidermolysis Bullosa and other monogenic disorders.",
+
+      about_supporter1Logo: "ebrp.png",
+      about_supporter1Name: "EBRP",
+      about_supporter1Width: 200,
+      about_supporter1Height: 100,
+      about_supporter1Link: "https://ebrp.org/",
+
+      about_supporter2Logo: "reins.png",
+      about_supporter2Name: "REiNS",
+      about_supporter2Width: 200,
+      about_supporter2Height: 100,
+      about_supporter2Link: "https://ccrod.cancer.gov/confluence/",
 
       about_mission1: "EB Simplified is dedicated to making scientific research more accessible and understandable for individuals and families affected by EB.",
       about_mission2: "We believe everyone deserves access to clear, reliable information about the latest advances in EB research. By sharing simplified and accurate summaries of scientific findings, we aim to empower the EB community to make informed decisions, stay updated on medical progress, and feel connected to the breakthroughs shaping their care.",
