@@ -8,7 +8,6 @@ const SubscriptionBanner = () => {
     useEffect(() => {
         document.documentElement.style.setProperty('--subscription-bg-left', `url(/assets/${tenant.shortName}/${tenant.contactUsBGLeft})`);
         document.documentElement.style.setProperty('--subscription-bg-right', `url(/assets/${tenant.shortName}/${tenant.contactUsBGRight})`);
-        document.documentElement.style.setProperty('--subscription-bg-full', `url(/assets/${tenant.shortName}/${tenant.contactUsBGFull})`);
         document.documentElement.style.setProperty('--color-contactUsColor', tenant.theme.contactUsColor);
     }, []);
 
