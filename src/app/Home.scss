@@ -8,6 +8,12 @@
         background-position: bottom right;
         background-size: 45vw;
 
+        &.background-alt {
+            background-image: var(--hero-illustration);
+            background-position: center right;
+            background-size: 50vw;
+        }
+
         // min-height: 100vh;
     }
     &__hero {
