@@ -88,7 +88,7 @@ export default async function AboutPage() {
                                 className={`${aboutPageClass}__mission-illustration`}
                             >
                                 <Image
-                                    src={joinUsIllustration}
+                                    src={`/assets/${tenant.shortName}/about/${tenant.about_our_mission}`}
                                     alt="Mission illustration"
                                     width={400}
                                     height={400}
