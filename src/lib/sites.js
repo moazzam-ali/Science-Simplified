@@ -28,7 +28,7 @@ export const sites = {
       loginBGTop: "NF_loginBGTop.webp", //loginBGTop
       loginBGBottom: "EB_loginBGBottom.webp", //loginBGTop
       //Text
-      text_homeTitleDescription: "Collection of simplified NF articles certified by experts. Powered by Innovation.",
+      text_homeTitleDescription: "Collection of simplified NF articles certified by experts.",
       text_exploreAllTitle: "We give knowledge to NF patients, families, and caregivers",
       text_exploreAllDescription: "Collection of simplified NF articles certified by experts. Powered by REiNS.",
       text_footerDescription: "Provide accessible, up-to-date, and comprehensive information about Neurofibromatosis to patients, families, and caregivers. We aim to empower those affected by NF with the knowledge and resources they need to navigate their journey.",
@@ -103,7 +103,7 @@ export const sites = {
       loginBGBottom: "EB_loginBGBottom.webp", //loginBGTop
 
       //Text
-      text_homeTitleDescription: "Collection of simplified EB articles certified by experts. Powered by Innovation.",
+      text_homeTitleDescription: "Collection of simplified EB articles certified by experts. ",
       text_exploreAllTitle: "We give knowledge to EB patients, families, and caregivers",
       text_exploreAllDescription: "Collection of simplified EB articles certified by experts.",
       text_footerDescription: "Provide accessible, up-to-date, and comprehensive information about Epidermolysis Bullosa to patients, families, and caregivers. We aim to empower those affected by EB with the knowledge and resources they need to navigate their journey.",
@@ -179,7 +179,7 @@ export const sites = {
       loginBGBottom: "EB_loginBGBottom.webp", //loginBGTop
 
       //Text
-      text_homeTitleDescription: "Collection of simplified CF articles certified by experts. Powered by Innovation.",
+      text_homeTitleDescription: "Collection of simplified CF articles certified by experts. ",
       text_exploreAllTitle: "Breathe Easier, Understand More",
       text_exploreAllDescription: "Collection of simplified CF articles certified by experts.",
       text_footerDescription: "Provide accessible, up-to-date, and comprehensive information about Cystic Fibrosis to patients, families, and caregivers. We aim to empower those affected by CF with the knowledge and resources they need to navigate their journey.",
