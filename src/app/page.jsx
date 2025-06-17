@@ -50,7 +50,7 @@ export default function Home() {
                                 </h2>
                             </div>
                             <p className="body-large">
-                                {tenant.text_homeTitleDescription}.{" "}
+                                {tenant.text_homeTitleDescription}{" "}
                                 <span className="w-700 color-green-dark">
                                     Powered by Innovation.
                                 </span>
