@@ -112,12 +112,12 @@ export const sites = {
       about_teamMember1Image: "kyle.png",
       about_teamMember1Name: "Kyle Wan",
       about_teamMember1Title: "Founder & Lead",
-      about_teamMember1Bio:  "Committed to building a user-friendly platform to help researchers share clear, accurate summaries with the NF community.",
+      about_teamMember1Bio:  "Committed to building a user-friendly platform to help researchers share clear, accurate summaries with the EB community.",
       
       about_teamMember2Image: "kimiya.png",
       about_teamMember2Name: "Kimiya Aframian",
       about_teamMember2Title: "Medical Outreach Lead",
-      about_teamMember2Bio: "Kimiya is a medical student at Stanford University highly interested in Dermatology and currently leads our BE rare dermatologic disease team. She was born and raised in Los Angeles and graduated from UCLA studying Psychobiology and Disability Studies. On her free time, Kimiya enjoys the outdoors, cooking, music, travel, and spending time with family and friends.",
+      about_teamMember2Bio: "Kimiya is a medical student at Stanford University highly interested in Dermatology and currently leads the BE rare dermatologic disease team. She was born and raised in Los Angeles and graduated from UCLA studying Psychobiology and Disability Studies. In her free time, Kimiya enjoys the outdoors, cooking, music, travel, and spending time with family and friends.",
 
       about_teamMember3Image: "jeantang.webp",
       about_teamMember3Name: "Jean Tang, MD Ph.D.",
@@ -188,7 +188,7 @@ export const sites = {
       about_teamMember1Image: "kyle.png",
       about_teamMember1Name: "Kyle Wan",
       about_teamMember1Title: "Founder & Lead",
-      about_teamMember1Bio:  "Committed to building a user-friendly platform to help researchers share clear, accurate summaries with the NF community.",
+      about_teamMember1Bio:  "Committed to building a user-friendly platform to help researchers share clear, accurate summaries with the CF community.",
       
       about_teamMember2Image: "expert-placeholder.png",
       about_teamMember2Name: "Daniel Feldman",
@@ -232,20 +232,20 @@ export const sites = {
       logoPath: "/sites/EB/logo.svg",
       featureX: false,
       theme: { // Theme
-        primary: "#94e0d4",
+        primary: "#f7d297",
         primaryDark: "#448178",
         lightGrey: "#f5f5f5",
         text: "#1e2a3c",
-        background: "#f5f7fA",
-        contactUsColor: "#c6a5e3", //contactUsColor
+        background: "#ffffff",
+        contactUsColor: "#f0c441", //contactUsColor
         authorTextColor: "#4c85b1", //authorTextColor
-        footerBGColor: "#f2e6f8", //footerBGColor
+        footerBGColor: "#f5ebc1", //footerBGColor
       },
       // Images (Home)
       homeBG: "CF_BG_home.jpg", //home/homeBG
-      homeExploreAllBG: "CF_ExploreAllBG.jpg", //home/homeExploreAllBG
+      homeExploreAllBG: "Ashermans_ExploreAllBG.png", //home/homeExploreAllBG
       // Images (General)
-      logoWithText: "CF_text_with_logo.png", //logoWithText
+      logoWithText: "TempAshermans_text_with_logo.png", //logoWithText
       articleThumbnailPlaceholder: "CF_article_placeholder.jpg", //articleThumbnailPlaceholder
       contactUsBGLeft: "CF_contactUsBGLeft-Enhanced.jpg", //contactUsBGLeft # uses full width background
       contactUsBGRight: "CF_contactUsBGLeft-Enhanced.jpg", //contactUsBGRight # uses full width background
@@ -264,39 +264,39 @@ export const sites = {
       about_teamMember1Image: "kyle.png",
       about_teamMember1Name: "Kyle Wan",
       about_teamMember1Title: "Founder & Lead",
-      about_teamMember1Bio:  "Committed to building a user-friendly platform to help researchers share clear, accurate summaries with the NF community.",
+      about_teamMember1Bio:  "Committed to building a user-friendly platform to help researchers share clear, accurate summaries with the Asherman's Syndrome community.",
       
-      about_teamMember2Image: "expert-placeholder.png",
-      about_teamMember2Name: "Daniel Feldman",
+      about_teamMember2Image: "Selina.jpg",
+      about_teamMember2Name: "Selina Montoya",
       about_teamMember2Title: "Medical Outreach Lead",
-      about_teamMember2Bio: "Daniel is a rising 3rd year medical student at West Virginia School of Osteopathic Medicine. His goal is to pursue a career in Pathology. In his down time, he enjoys walking, reading and playing basketball with friends. ",
+      about_teamMember2Bio: "Selina is a third-year medical student at the University of New Mexico School of Medicine with a strong interest in women's health. She aspires to pursue a residency in either Obstetrics and Gynecology or Family Medicine, where she can provide comprehensive, compassionate care to women across all stages of life. In her free time, she enjoys watching movies and exploring the beautiful hiking trails around Albuquerque.",
 
       about_teamMember3Image: "expert-placeholder.png",
-      about_teamMember3Name: "Faculty Advisor Name",
+      about_teamMember3Name: "Keith Isaacson",
       about_teamMember3Title: "Faculty Advisor",
       about_teamMember3Bio: "Faculty Advisor Bio",
 
-      about_supporter1Logo: "CFF.jpg",
-      about_supporter1Name: "CFF",
-      about_supporter1Width: 200,
+      about_supporter1Logo: "IAA.png",
+      about_supporter1Name: "International Asherman's Association",
+      about_supporter1Width: 400,
       about_supporter1Height: 200,
-      about_supporter1Link: "https://www.cff.org/",
+      about_supporter1Link: "https://ashermans-support.org/",
 
-      about_supporter2Logo: "CFF.jpg",
-      about_supporter2Name: "CFF",
+      about_supporter2Logo: "IAA.png",
+      about_supporter2Name: "International Asherman's Association",
       about_supporter2Width: 200,
       about_supporter2Height: 100,
-      about_supporter2Link: "https://ccrod.cancer.gov/confluence/",
+      about_supporter2Link: "https://www.internationalashermans.org/",
       about_supporter2Hidden: true,
 
-      about_mission1: "CF Simplified is dedicated to making scientific research more accessible and understandable for individuals and families affected by CF.",
-      about_mission2: "We believe everyone deserves access to clear, reliable information about the latest advances in CF research. By sharing simplified and accurate summaries of scientific findings, we aim to empower the CF community to make informed decisions, stay updated on medical progress, and feel connected to the breakthroughs shaping their care.",
-      about_teamDescription: "We are a passionate, volunteer-led team of scientists, clinicians, developers, and advocates working together to bridge the gap between research and the CF community.",
-      about_contributorsDescription: "We're a growing network of scientists who volunteer to edit article summaries and share the amazing research being done in Cystic Fibrosis with the community.",
-      about_getInvolvedDescription: "CF Simplified is 100% volunteer-led, and we're always looking for passionate people to join us! Whether you're into web development, research, database management, design, or community outreach—there's a place for you on our team.",
-      about_supportersDescription: "We're proud to work alongside and be supported by organizations dedicated to the Cystic Fibrosis community",
+      about_mission1: "Asherman's Simplified is dedicated to making scientific research more accessible and understandable for individuals and families affected by Asherman's Syndrome.",
+      about_mission2: "We believe everyone deserves access to clear, reliable information about the latest advances in Asherman's Syndrome research. By sharing simplified and accurate summaries of scientific findings, we aim to empower the Asherman's Syndrome community to make informed decisions, stay updated on medical progress, and feel connected to the breakthroughs shaping their care.",
+      about_teamDescription: "We are a passionate, volunteer-led team of scientists, clinicians, developers, and advocates working together to bridge the gap between research and the Asherman's Syndrome community.",
+      about_contributorsDescription: "We're a growing network of scientists who volunteer to edit article summaries and share the amazing research being done in Asherman's Syndrome with the community.",
+      about_getInvolvedDescription: "Asherman's Simplified is 100% volunteer-led, and we're always looking for passionate people to join us! Whether you're into web development, research, database management, design, or community outreach—there's a place for you on our team.",
+      about_supportersDescription: "We're proud to work alongside and be supported by organizations dedicated to the Asherman's Syndrome community",
 
-      about_our_mission: "CF_our_mission.jpg",
+      about_our_mission: "our-mission.jpg",
       
     },
 
