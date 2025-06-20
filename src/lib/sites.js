@@ -381,12 +381,12 @@ export const sites = {
       
     },
 
-    Aicardi: {
-      name: "Aicardi Simplified",
-      shortName: "Aicardi",
-      pathName: "Aicardi",
-      fullName: "Aicardi Simplified",
-      disease: "Aicardi Syndrome",
+    RYR1: {
+      name: "RYR1 Simplified",
+      shortName: "RYR1",
+      pathName: "RYR1",
+      fullName: "RYR1 Simplified",
+      disease: "RYR1",
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
 
 
