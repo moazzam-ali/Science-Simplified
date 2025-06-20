@@ -153,6 +153,23 @@
             }
         }
     }
+
+    &__authors-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+    &__authors-list-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    &__add-author {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
 }
 
 // media queries for responsiveness

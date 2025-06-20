@@ -1,6 +1,8 @@
 import openai from "@/lib/openai";
 import { marked } from "marked"; // You may need to install this package
 import { tenant } from "@/lib/config";
+import { zodTextFormat } from "openai/helpers/zod";
+import { z } from "zod";
 
 export async function summarizeArticle(content) {
     try {

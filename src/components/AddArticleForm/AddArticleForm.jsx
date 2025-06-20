@@ -6,6 +6,7 @@ import React, { useState, useRef } from "react";
 import "react-quill/dist/quill.snow.css";
 import { X } from "lucide-react";
 import "./AddArticleForm.scss";
+import { cleanName } from "@/lib/utils";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -113,61 +114,7 @@ const AddArticleForm = () => {
             toast.error("Please upload a valid PDF file.");
         }
     };
-    // const extractTextFromPDF = async (file) => {
-    //     const arrayBuffer = await file.arrayBuffer();
-    //     const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-    //     let extractedText = '';
-    //     for (let i = 1; i <= pdf.numPages; i++) {
-    //         const page = await pdf.getPage(i);
-    //         const textContent = await page.getTextContent();
-    //         const pageText = textContent.items.map((item) => item.str).join(' ');
-    //         extractedText += pageText + '\n';
-    //     }
-    //     return extractedText;
-    // };
-    // const handlePDFUpload = async (event) => {
-    //     const file = event.target.files[0];
-    //     if (file && file.type === 'application/pdf') {
-    //         try {
-    //             const text = await extractTextFromPDF(file);
-    //             setContent(text); // Assuming you have setContent to update the content state
-    //             toast.success('PDF content extracted successfully!');
-    //         } catch (error) {
-    //             toast.error('Failed to extract PDF content: ' + error.message);
-    //         }
-    //     } else {
-    //         toast.error('Please upload a valid PDF file.');
-    //     }
-    // };
-    // const handlePDFUpload = async (event) => { //this is pdf to text one
-    //     const file = event.target.files[0];
-    //     if (file && file.type === "application/pdf") {
-    //         try {
-    //             const text = await pdfToText(file);
-    //             setContent(text);
-    //             toast.success("PDF content extracted successfully!");
-    //         } catch (error) {
-    //             toast.error("Failed to extract PDF content: " + error.message);
-    //         }
-    //     } else {
-    //         toast.error("Please upload a valid PDF file.");
-    //     }
-    // };
-    // const handlePDFUpload = async (event) => {
-    //     const file = event.target.files[0];
-    //     if (file && file.type === "application/pdf") {
-    //         try {
-    //             const arrayBuffer = await file.arrayBuffer();
-    //             const data = await pdfParse(Buffer.from(arrayBuffer));
-    //             setContent(data.text);
-    //             toast.success("PDF content extracted successfully!");
-    //         } catch (error) {
-    //             toast.error("Failed to extract PDF content: " + error.message);
-    //         }
-    //     } else {
-    //         toast.error("Please upload a valid PDF file.");
-    //     }
-    // };
+    
     const handleRunSimplification = async () => {
         // Validate required fields
         if (!title.trim()) {
@@ -208,6 +155,7 @@ const AddArticleForm = () => {
                     tags,
                     innertext: content,
                     article_link: sourceLink,
+                    authors: authors,
                     simplifyLength: `${simplifyLength} ${simplifyUnit}`,
                     publisher: user,
                     image_url: imageUrl,
@@ -236,7 +184,31 @@ const AddArticleForm = () => {
         } finally {
             setIsLoading(false);
         }
+    
+
     };
+
+    const updateAuthor = (idx, value) => {
+        setAuthors(a => {
+          const copy = [...a];
+          copy[idx] = value;
+          return copy;
+        });
+      };
+    
+      const removeAuthor = idx => {
+        setAuthors(a => a.filter((_, i) => i !== idx));
+      };
+    
+      const addAuthors = () => {
+        const parsed = newAuthor
+          .split(",")
+          .map(cleanName)
+          .filter(n => n);
+        setAuthors(a => [...a, ...parsed]);
+        setNewAuthor("");
+      };
+    
 
     // const modules = {
     //     toolbar: [
@@ -376,6 +348,51 @@ const AddArticleForm = () => {
                     </SelectContent>
                 </Select>
             </div>
+
+            {/* — AUTHORS — */}
+            <div className="add-article-form__field">
+                <Label className="add-article-form__label">Authors</Label>
+
+                <div className="add-article-form__authors-list">
+                    {authors.map((name, i) => (
+                    <div key={i} className="add-article-form__authors-list-item">
+                        <Input
+                        value={name}
+                        onChange={e => updateAuthor(i, e.target.value)}
+                        className="add-article-form__input"
+                        />
+                        <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => removeAuthor(i)}
+                        className="add-article-form__tag-remove"
+                        >
+                        <X size={14} />
+                        </Button>
+                    </div>
+                    ))}
+                </div>
+
+                <div className="add-article-form__add-author">
+                    <Input
+                    placeholder="Paste or type author(s)…"
+                    value={newAuthor}
+                    onChange={e => setNewAuthor(e.target.value)}
+                    onKeyDown={e => {
+                        if (e.key === "Enter") {
+                        e.preventDefault();
+                        addAuthors();
+                        }
+                    }}
+                    className="add-article-form__input"
+                    />
+                    <Button type="button" onClick={addAuthors}>
+                    Add
+                    </Button>
+                </div>
+            </div>
+
 
             <div className="add-article-form__field">
                 <Label className="add-article-form__label">
