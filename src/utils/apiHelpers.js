@@ -9,7 +9,7 @@ import path from "path";
 const exampleHtmlPath = path.join(
     process.cwd(),
     "public",
-    "asset",
+    "assets",
     "example-output.html"
   );
   // Synchronously load it into memory
