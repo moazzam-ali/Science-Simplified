@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={`${outfitFont.variable} antialiased`}>
+
                 <ThemeProvider>
                     <ToastContainer
                         position="top-right"

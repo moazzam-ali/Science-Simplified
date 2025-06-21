@@ -280,7 +280,7 @@ const ArticlePage = ({ params }) => {
                                 ></div>
                             </div>
                             <div
-                                className="article-page__content-text"
+                                className="article-page__content-text apicss-body"
                                 dangerouslySetInnerHTML={{
                                     __html: article.innertext,
                                 }}
