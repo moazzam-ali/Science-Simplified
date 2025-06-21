@@ -209,6 +209,7 @@ const EditArticleForm = ({
                 ],
                 allowedAttributes: {
                     a: ["href", "target"],
+                    "*": ["class"],
                 },
             }),
             article_link: sourceLink,
