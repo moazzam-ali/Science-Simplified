@@ -384,7 +384,7 @@ const AddArticleForm = () => {
                 <Input
                 id="pubDate"
                 type="text"
-                placeholder="e.g. 2025 April 12 (Optional)"
+                placeholder="e.g. 2025 April 12"
                 value={publicationDate}
                 onChange={e => setPublicationDate(e.target.value)}
                 className="add-article-form__input"
