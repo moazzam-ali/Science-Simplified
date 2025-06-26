@@ -470,10 +470,10 @@ export const sites = {
 
       theme: { // Theme
         primary: "#a0bcfa",
-        primaryDark: "#E32636",
+        primaryDark: "#2f99eb",
         lightGrey: "#f5f5f5",
-        text: "#3d2447",
-        background: "#f5c4c4",
+        text: "#630f0f",
+        background: "#defcf6",
         contactUsColor: "#c6a5e3", //contactUsColor
         authorTextColor: "#6d32a8", //authorTextColor
         footerBGColor: "#f5faff", //footerBGColor
