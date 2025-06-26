@@ -469,14 +469,14 @@ export const sites = {
 
 
       theme: { // Theme
-        primary: "#d49bf2",
-        primaryDark: "#6d32a8",
+        primary: "#a0bcfa",
+        primaryDark: "#E32636",
         lightGrey: "#f5f5f5",
         text: "#3d2447",
-        background: "#ffffff",
+        background: "#d5e4f5",
         contactUsColor: "#c6a5e3", //contactUsColor
         authorTextColor: "#6d32a8", //authorTextColor
-        footerBGColor: "#b284e0", //footerBGColor
+        footerBGColor: "#e08484", //footerBGColor
       },
       // Images (Home)
       homeBG: "ALS_bluecornflower.png", //home/homeBG
