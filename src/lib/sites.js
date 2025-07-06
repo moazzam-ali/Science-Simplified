@@ -501,7 +501,7 @@ export const sites = {
       about_teamMember1Image: "kyle.png",
       about_teamMember1Name: "Kyle Wan",
       about_teamMember1Title: "Founder & Lead",
-      about_teamMember1Bio:  "Committed to building a user-friendly platform to help researchers share clear, accurate summaries with the Aicardi Syndrome community.",
+      about_teamMember1Bio:  "Committed to building a user-friendly platform to help researchers share clear, accurate summaries with the ALS community.",
       
       about_teamMember2Image: "Ariba.png",
       about_teamMember2Name: "Ariba Fatima",
@@ -569,16 +569,16 @@ export const sites = {
       loginBGBottom: "RETT_loginBGBottom.webp", //loginBGTop
 
       //Text
-      text_homeTitleDescription: "Collection of simplified ALS articles certified by experts. ",
+      text_homeTitleDescription: "Collection of simplified Rett Syndrome articles certified by experts. ",
       text_exploreAllTitle: "We give knowledge to patients, families, and caregivers",
-      text_exploreAllDescription: "Collection of simplified ALS articles certified by experts.",
-      text_footerDescription: "Provide accessible, up-to-date, and comprehensive information about ALS to patients, families, and caregivers. We aim to empower those affected by ALS with the knowledge and resources they need to navigate their journey.",
+      text_exploreAllDescription: "Collection of simplified Rett Syndrome articles certified by experts.",
+      text_footerDescription: "Provide accessible, up-to-date, and comprehensive information about Rett Syndrome to patients, families, and caregivers. We aim to empower those affected by Rett Syndrome with the knowledge and resources they need to navigate their journey.",
 
       // About
       about_teamMember1Image: "kyle.png",
       about_teamMember1Name: "Kyle Wan",
       about_teamMember1Title: "Founder & Lead",
-      about_teamMember1Bio:  "Committed to building a user-friendly platform to help researchers share clear, accurate summaries with the Aicardi Syndrome community.",
+      about_teamMember1Bio:  "Committed to building a user-friendly platform to help researchers share clear, accurate summaries with the Rett Syndrome community.",
       
       about_teamMember2Image: "expert-placeholder.png",
       about_teamMember2Name: "Kejah Bascon",
@@ -603,12 +603,12 @@ export const sites = {
       about_supporter2Link: "https://www.rettsyndrome.org/",
       about_supporter2Hidden: true,
 
-      about_mission1: "ALS Simplified is dedicated to making scientific research more accessible and understandable for individuals and families affected by ALS.",
-      about_mission2: "We believe everyone deserves access to clear, reliable information about the latest advances in ALS research. By sharing simplified and accurate summaries of scientific findings, we aim to empower the ALS community to make informed decisions, stay updated on medical progress, and feel connected to the breakthroughs shaping their care.",
-      about_teamDescription: "We are a passionate, volunteer-led team of scientists, clinicians, developers, and advocates working together to bridge the gap between research and the ALS community.",
-      about_contributorsDescription: "We're a growing network of scientists who volunteer to edit article summaries and share the amazing research being done in ALS with the community.",
-      about_getInvolvedDescription: "ALS Simplified is 100% volunteer-led, and we're always looking for passionate people to join us! Whether you're into web development, research, database management, design, or community outreach—there's a place for you on our team.",
-      about_supportersDescription: "We're proud to work alongside and be supported by organizations dedicated to the ALS community",
+      about_mission1: "Rett Simplified is dedicated to making scientific research more accessible and understandable for individuals and families affected by Rett Syndrome.",
+      about_mission2: "We believe everyone deserves access to clear, reliable information about the latest advances in Rett Syndrome research. By sharing simplified and accurate summaries of scientific findings, we aim to empower the Rett Syndrome community to make informed decisions, stay updated on medical progress, and feel connected to the breakthroughs shaping their care.",
+      about_teamDescription: "We are a passionate, volunteer-led team of scientists, clinicians, developers, and advocates working together to bridge the gap between research and the Rett Syndrome community.",
+      about_contributorsDescription: "We're a growing network of scientists who volunteer to edit article summaries and share the amazing research being done in Rett Syndrome with the community.",
+      about_getInvolvedDescription: "Rett Simplified is 100% volunteer-led, and we're always looking for passionate people to join us! Whether you're into web development, research, database management, design, or community outreach—there's a place for you on our team.",
+      about_supportersDescription: "We're proud to work alongside and be supported by organizations dedicated to the Rett Syndrome community",
 
       about_our_mission: "our-mission.jpg",
       
