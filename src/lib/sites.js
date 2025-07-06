@@ -539,7 +539,7 @@ export const sites = {
     RETT: {
       name: "Rett Simplified",
       shortName: "Rett",
-      pathName: "Rett",
+      pathName: "RETT",
       fullName: "Rett Simplified",
       disease: "Rett Syndrome",
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
