@@ -557,12 +557,12 @@ export const sites = {
       },
       // Images (Home)
       homeBG: "RETT_symbol.png", //home/homeBG
-      homeExploreAllBG: "RETT_ExploreAllBG.png", //home/homeExploreAllBG
+      homeExploreAllBG: "RETT_ExploreAllBG.jpg", //home/homeExploreAllBG
       // Images (General)
       logoWithText: "RETT_symbol.png", //logoWithText
       articleThumbnailPlaceholder: "RETT_symbol.png", //articleThumbnailPlaceholder
-      contactUsBGLeft: "RETT_contactUsBGLeft.png", //contactUsBGLeft # uses full width background
-      contactUsBGRight: "RETT_contactUsBGLeft.png", //contactUsBGRight # uses full width background
+      contactUsBGLeft: "RETT_contactUsBGLeft.jpg", //contactUsBGLeft # uses full width background
+      contactUsBGRight: "RETT_contactUsBGLeft.jpg", //contactUsBGRight # uses full width background
 
       
       loginBGTop: "RETT_loginBGTop.webp", //loginBGTop
