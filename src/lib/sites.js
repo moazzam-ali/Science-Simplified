@@ -790,17 +790,17 @@ export const sites = {
         footerBGColor: "#f5d0c6", //footerBGColor
       },
       // Images (Home)
-      homeBG: "RYR1_homeBG.png", //home/homeBG
-      homeExploreAllBG: "RYR1_ExploreAllBG.png", //home/homeExploreAllBG
+      homeBG: "Canavan_homeBG.png", //home/homeBG
+      homeExploreAllBG: "Canavan_ExploreAllBG.png", //home/homeExploreAllBG
       // Images (General)
-      logoWithText: "RYR1_logo_with_text.png", //logoWithText
-      articleThumbnailPlaceholder: "RYR1_article_placeholder.png", //articleThumbnailPlaceholder
-      contactUsBGLeft: "RYR1_contactUsBGLeft-Enhanced.jpg", //contactUsBGLeft # uses full width background
-      contactUsBGRight: "RYR1_contactUsBGLeft-Enhanced.jpg", //contactUsBGRight # uses full width background
+      logoWithText: "Canavan_text_with_logo.png", //logoWithText
+      articleThumbnailPlaceholder: "Canavan_text_with_logo.png", //articleThumbnailPlaceholder
+      contactUsBGLeft: "Canavan_contactUsBGLeft.jpg", //contactUsBGLeft # uses full width background
+      contactUsBGRight: "Canavan_contactUsBGLeft.jpg", //contactUsBGRight # uses full width background
 
       
-      loginBGTop: "RYR1_loginBGTop.webp", //loginBGTop
-      loginBGBottom: "RYR1_loginBGBottom.webp", //loginBGTop
+      loginBGTop: "Canavan_loginBGTop.webp", //loginBGTop
+      loginBGBottom: "Canavan_loginBGBottom.webp", //loginBGTop
 
       //Text
       text_homeTitleDescription: "Collection of simplified Canavan Disease articles certified by experts. ",
