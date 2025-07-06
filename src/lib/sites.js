@@ -401,11 +401,11 @@ export const sites = {
         footerBGColor: "#e0c099", //footerBGColor
       },
       // Images (Home)
-      homeBG: "RYR1_homeBG_temp.jpg", //home/homeBG
+      homeBG: "RYR1_homeBG.png", //home/homeBG
       homeExploreAllBG: "RYR1_ExploreAllBG.png", //home/homeExploreAllBG
       // Images (General)
       logoWithText: "RYR1_logo_with_text.png", //logoWithText
-      articleThumbnailPlaceholder: "RYR1_article_placeholder_temp.jpg", //articleThumbnailPlaceholder
+      articleThumbnailPlaceholder: "RYR1_article_placeholder.png", //articleThumbnailPlaceholder
       contactUsBGLeft: "RYR1_contactUsBGLeft-Enhanced.jpg", //contactUsBGLeft # uses full width background
       contactUsBGRight: "RYR1_contactUsBGLeft-Enhanced.jpg", //contactUsBGRight # uses full width background
 
