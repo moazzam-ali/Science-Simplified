@@ -395,16 +395,16 @@ export const sites = {
         primaryDark: "#913f13",
         lightGrey: "#f5f5f5",
         text: "#3d2447",
-        background: "#f0d7c9",
+        background: "#f7ece6",
         contactUsColor: "#c6a5e3", //contactUsColor
         authorTextColor: "#6d32a8", //authorTextColor
-        footerBGColor: "#dbaf79", //footerBGColor
+        footerBGColor: "#e0c099", //footerBGColor
       },
       // Images (Home)
       homeBG: "RYR1_homeBG_temp.jpg", //home/homeBG
       homeExploreAllBG: "RYR1_ExploreAllBG.png", //home/homeExploreAllBG
       // Images (General)
-      logoWithText: "RYR1_logo_w_text_temp.jpg", //logoWithText
+      logoWithText: "RYR1_logo_with_text.png", //logoWithText
       articleThumbnailPlaceholder: "RYR1_article_placeholder_temp.jpg", //articleThumbnailPlaceholder
       contactUsBGLeft: "RYR1_contactUsBGLeft-Enhanced.jpg", //contactUsBGLeft # uses full width background
       contactUsBGRight: "RYR1_contactUsBGLeft-Enhanced.jpg", //contactUsBGRight # uses full width background
