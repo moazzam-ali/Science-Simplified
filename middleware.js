@@ -11,6 +11,7 @@ const ADMIN_API = [
 
 export async function middleware(req) {
   const { pathname } = req.nextUrl;
+  console.log(pathname);
 
   // 1) Public pages
   if (
