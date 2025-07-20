@@ -1,6 +1,8 @@
 // app/api/auth/signup/route.js
 import { query } from "@/lib/db";
 import bcrypt from "bcrypt";
+import { sign } from "jsonwebtoken";
+import { serialize } from "cookie";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -28,13 +30,35 @@ export async function POST(req) {
             [userId, `${firstName} ${lastName}`, userEmail, null, null] // Include email
         );
 
-        return NextResponse.json(
+        
+
+
+        // ——————————————————————————————
+        // now generate a JWT and set it as a cookie
+        const token = sign(
+            { email: userEmail, id: userId, name: `${firstName} ${lastName}`, role: "user", isAdmin: false },
+            process.env.JWT_SECRET || "your-secret-key",
+            { expiresIn: "1d" }
+        );
+
+        const cookie = serialize("auth", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "strict",
+            maxAge: 86400,
+            path: "/",
+        });
+
+        const response = NextResponse.json(
             {
                 message: "Account created successfully",
-                user: result.rows[0],
+                user: { email: userEmail, userId, name: `${firstName} ${lastName}`, isAdmin: false },
             },
             { status: 201 }
         );
+        response.headers.set("Set-Cookie", cookie);
+        return response;
+
     } catch (error) {
         if (error.code === "23505") {
             // Unique violation error code (e.g., duplicate email)
