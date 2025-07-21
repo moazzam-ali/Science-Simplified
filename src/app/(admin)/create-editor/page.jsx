@@ -1,11 +1,11 @@
 "use client";
-
+import "./CreateEditorPage.scss";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Input } from "@/components/ui/input";
-import "./CreateEditorPage.scss";
+
 
 export default function CreateEditorPage() {
   const [form, setForm] = useState({
