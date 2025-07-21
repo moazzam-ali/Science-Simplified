@@ -2,8 +2,11 @@ export const revalidate = 0; // Disable caching for this API route
 
 import { query } from "@/lib/db";
 import { NextResponse } from "next/server";
+import { requireAdmin } from "@/lib/adminGuard";
 
 export async function GET() {
+    const adminCheck = requireAdmin(request);
+    if (adminCheck instanceof NextResponse) return adminCheck;
     try {
         // Fetch article IDs from the featured table
         const featuredResult = await query(
