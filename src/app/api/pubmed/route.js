@@ -4,13 +4,25 @@ import xml2js from "xml2js";
 
 export const runtime = "nodejs";
 
+// Helper to safely extract text from xml2js values
+const getText = (val) => {
+    if (!val) return "";
+    if (typeof val === "string") return val;
+    if (typeof val === "object" && val._) return val._;
+    return "";
+};
+
 export async function POST(req) {
     try {
         const { url } = await req.json();
 
-        const validPattern = /(pubmed\.ncbi\.nlm\.nih\.gov\/\d+)|(pmc\.ncbi\.nlm\.nih\.gov\/articles\/PMC\d+)/i;
+        const validPattern =
+            /(pubmed\.ncbi\.nlm\.nih\.gov\/\d+)|(pmc\.ncbi\.nlm\.nih\.gov\/articles\/PMC\d+)/i;
         if (!url || !validPattern.test(url)) {
-            return NextResponse.json({ error: "Invalid PubMed or PubMed Central URL" }, { status: 400 });
+            return NextResponse.json(
+                { error: "Invalid PubMed or PubMed Central URL" },
+                { status: 400 }
+            );
         }
 
         // Detect DB & ID
@@ -49,22 +61,25 @@ export async function POST(req) {
                 return NextResponse.json({ error: "Article not found" }, { status: 404 });
             }
 
-            title = article.ArticleTitle || "";
+            title = getText(article.ArticleTitle);
 
             // Abstract
             if (article.Abstract?.AbstractText) {
                 const absData = Array.isArray(article.Abstract.AbstractText)
                     ? article.Abstract.AbstractText
                     : [article.Abstract.AbstractText];
-                abstract = absData.map(obj => obj._ || obj).join("\n\n");
+                abstract = absData.map(obj => getText(obj)).join("\n\n");
             }
 
-            // Authors
+            // Authors (normalize + full name)
             if (article.AuthorList?.Author) {
                 const authorData = Array.isArray(article.AuthorList.Author)
                     ? article.AuthorList.Author
                     : [article.AuthorList.Author];
-                authors = authorData.map(a => `${a.ForeName || ""} ${a.LastName || ""}`.trim());
+                authors = authorData.map(a => {
+                    const parts = [getText(a.ForeName), getText(a.LastName)].filter(Boolean);
+                    return parts.join(" ").replace(/\s+/g, " ").trim();
+                });
             }
 
             // Date
@@ -72,11 +87,11 @@ export async function POST(req) {
             date = [pubDate.Year, pubDate.Month, pubDate.Day].filter(Boolean).join(" ");
 
             // DOI
-            const ids = parsed?.PubmedArticleSet?.PubmedArticle?.PubmedData?.ArticleIdList?.ArticleId || [];
+            const ids =
+                parsed?.PubmedArticleSet?.PubmedArticle?.PubmedData?.ArticleIdList?.ArticleId || [];
             doi = Array.isArray(ids)
                 ? ids.find(i => i.$?.IdType === "doi")?._
                 : ids._;
-
         } else if (db === "pmc") {
             // PMC XML
             const article = parsed?.["pmc-articleset"]?.article;
@@ -85,29 +100,32 @@ export async function POST(req) {
             }
 
             const meta = article?.front?.["article-meta"];
-            title = meta?.["title-group"]?.["article-title"] || "";
+            title = getText(meta?.["title-group"]?.["article-title"]);
 
-            // Authors
+            // Authors (normalize + full name)
             const contribs = meta?.["contrib-group"]?.contrib;
             if (contribs) {
                 const contribArray = Array.isArray(contribs) ? contribs : [contribs];
                 authors = contribArray.map(c => {
                     const name = c?.name || {};
                     const parts = [
-                        name.prefix || "",
-                        name["given-names"] || "",
-                        name.surname || "",
-                        name.suffix || ""
+                        getText(name.prefix),
+                        getText(name["given-names"]),
+                        getText(name.surname),
+                        getText(name.suffix)
                     ].filter(Boolean);
                     return parts.join(" ").replace(/\s+/g, " ").trim();
                 });
             }
 
-
             // Date
             const pubDate = meta?.["pub-date"];
             if (pubDate) {
-                date = [pubDate.Year || pubDate.year, pubDate.Month || pubDate.month, pubDate.Day || pubDate.day]
+                date = [
+                    getText(pubDate.Year || pubDate.year),
+                    getText(pubDate.Month || pubDate.month),
+                    getText(pubDate.Day || pubDate.day)
+                ]
                     .filter(Boolean)
                     .join(" ");
             }
@@ -119,12 +137,12 @@ export async function POST(req) {
                 doi = idsArray.find(i => i.$?.["pub-id-type"] === "doi")?._;
             }
 
-            // Abstract (PMC stores as sections in <abstract>)
+            // Abstract
             const abs = meta?.abstract;
             if (abs) {
                 const absData = Array.isArray(abs) ? abs : [abs];
                 abstract = absData
-                    .map(a => (typeof a === "string" ? a : a?.["#text"] || ""))
+                    .map(a => (typeof a === "string" ? a : getText(a?.["#text"] || a)))
                     .join("\n\n");
             }
         }
@@ -141,6 +159,4 @@ export async function POST(req) {
         console.error("PubMed fetch error:", err);
         return NextResponse.json({ error: "Failed to fetch PubMed data" }, { status: 500 });
     }
-}// Authors (normalize to array)
-
-
+}
