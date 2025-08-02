@@ -83,4 +83,6 @@ export async function POST(req) {
         });
     } catch (err) {
         console.error("PubMed fetch error:", err);
-        retur
+        return NextResponse.json({ error: "Failed to fetch PubMed data" }, { status: 500 });
+    }
+}
