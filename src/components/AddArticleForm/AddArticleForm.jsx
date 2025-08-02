@@ -267,7 +267,7 @@ const AddArticleForm = () => {
             setAuthors(data.authors || []);
             setPublicationDate(data.publicationDate || "");
             setSourceLink(data.sourceLink || pubmedUrl);
-            setContent(data.abstract || "");
+            setContent(data.content || "");
 
             toast.success("Article information fetched!");
         } catch (err) {
