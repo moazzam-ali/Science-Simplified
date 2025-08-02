@@ -17,22 +17,33 @@ export async function POST(req) {
             );
         }
 
-        // Extract numeric ID
-        const idMatch = url.match(/pubmed\.ncbi\.nlm\.nih\.gov\/(\d+)|PMC(\d+)/i);
-        if (!idMatch) {
+        // Detect DB and extract ID
+        let db = "pubmed";
+        let id = null;
+        if (/pubmed\.ncbi\.nlm\.nih\.gov/i.test(url)) {
+            const idMatch = url.match(/pubmed\.ncbi\.nlm\.nih\.gov\/(\d+)/i);
+            id = idMatch?.[1];
+        } else if (/pmc\.ncbi\.nlm\.nih\.gov/i.test(url)) {
+            const idMatch = url.match(/PMC(\d+)/i);
+            id = idMatch?.[1];
+            db = "pmc";
+        }
+
+        if (!id) {
             return NextResponse.json({ error: "Could not extract ID" }, { status: 400 });
         }
-        const id = idMatch[1] || idMatch[2];
 
-        // Fetch from E-utilities
-        const efetchUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=${id}&retmode=xml`;
+        // Fetch from correct database
+        const efetchUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=${db}&id=${id}&retmode=xml`;
         const response = await fetch(efetchUrl);
         if (!response.ok) {
-            return NextResponse.json({ error: "Failed to fetch from PubMed" }, { status: 502 });
+            return NextResponse.json({ error: "Failed to fetch from NCBI" }, { status: 502 });
         }
+
         const xml = await response.text();
         const parsed = await xml2js.parseStringPromise(xml, { explicitArray: false });
 
+        // PubMed XML format uses PubmedArticleSet → PubmedArticle
         const article = parsed?.PubmedArticleSet?.PubmedArticle?.MedlineCitation?.Article;
         if (!article) {
             return NextResponse.json({ error: "Article not found" }, { status: 404 });
