@@ -1,7 +1,7 @@
 // Navigation bar
 .navbar {
     font-family: var(--font-onest);
-    padding-block: 2rem;
+    padding-block: 4rem;
 }
 header {
     width: 100%;
@@ -112,7 +112,7 @@ header {
     text-transform: uppercase;
     padding: 1.5rem;
 
-    font-size: 3rem;
+    font-size: 4rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -124,7 +124,7 @@ header {
 
 @media screen and (max-width: 1200px) {
     .nav-link {
-        font-size: 2.4rem;
+        font-size: 4rem;
         font-weight: 500;
     }
 }
@@ -162,7 +162,7 @@ header {
         align-items: center;
 
         .icon-menu {
-            font-size: 3.7rem;
+            font-size: 5rem;
             color: #4cb19f;
         }
     }
@@ -264,7 +264,7 @@ header {
                 padding: 0.65rem 1rem;
                 text-align: left;
                 color: #444;
-                font-size: 1.4rem;
+                font-size: 3rem;
                 background: none;
                 border: none;
                 cursor: pointer;
