@@ -21,12 +21,14 @@ header {
 }
 
 .header-content {
-    width: 100%;
+    width: 95%; /* ⬅️ reduces container width so content sits closer to left */
+    margin: 0 auto 0 2rem; /* ⬅️ moves navbar slightly left */
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
-}
+  }
+  
 
 .header-left {
     display: flex;
@@ -214,7 +216,7 @@ header {
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.75rem;
+      gap: 2.25rem;
       list-style: none;
       font-size: 1.8rem;
 
