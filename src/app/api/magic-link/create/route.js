@@ -62,6 +62,8 @@ export async function POST(req) {
     const apiBase = process.env.APIHOSTNAME?.replace(/\/$/, "") || "http://localhost:3000";
     const magicUrl = `${apiBase}/api/magic-link/verify?tenant=${tenant}&token=${rawToken}`;
 
+    console.log("Magic URL:", magicUrl);
+
     // // Send email
     // try {
     //   await sendMagicLinkEmail({
