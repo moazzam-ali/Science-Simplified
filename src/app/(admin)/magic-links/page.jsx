@@ -186,12 +186,7 @@ async function generateLink() {
                     {new Date(link.created_at).toLocaleString()}
                   </td>
                   <td className="p-2 space-x-2">
-                    <button
-                      className="text-blue-600"
-                      onClick={() => navigator.clipboard.writeText(link.url)}
-                    >
-                      Copy
-                    </button>
+  
                     <button
                       className="text-red-600"
                       onClick={() => deleteLink(link.id, link.tenant)}

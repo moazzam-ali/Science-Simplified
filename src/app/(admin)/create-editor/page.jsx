@@ -170,4 +170,4 @@ export default withAuth(function CreateEditorPage() {
       <Footer />
     </main>
   );
-}, { adminOnly: true });
+});
