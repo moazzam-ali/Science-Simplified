@@ -43,7 +43,7 @@ export default function MagicLinksAdminPage() {
   // 🔁 Auto-update when tenant changes
   useEffect(() => {
     if (tenantName) {
-      const domain = tenant.domain;
+      const domain = defaultTenant.domain;
       setRedirectUrl(`${domain}/assigned-articles`);
       fetchLinks(tenantName); // 👈 direct parameter
     }
