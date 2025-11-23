@@ -5,7 +5,7 @@ import { tenantQuery } from "@/lib/tenantDb";
 import { sign } from "jsonwebtoken";
 import { serialize } from "cookie";
 import { tenant as defaultTenant } from "@/lib/config";
-import { requireAdmin } from "@/lib/adminGuard";
+
 
 
 
@@ -28,12 +28,11 @@ import { requireAdmin } from "@/lib/adminGuard";
 const tenant_domain = defaultTenant.domain;
 
 export async function GET(req) {
-  const adminCheck = requireAdmin();
-  if (adminCheck instanceof NextResponse) return adminCheck;
+
 
   try {
     const { searchParams } = new URL(req.url);
-    const tenant = searchParams.get("tenant");
+    const tenant = defaultTenant.shortName; // Force tenant to current panel
     const token = searchParams.get("token");
 
     if (!tenant || !token) {

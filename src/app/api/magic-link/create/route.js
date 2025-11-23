@@ -31,7 +31,8 @@ export async function POST(req) {
   try {
     const body = await req.json();
 
-    const tenant = (body?.tenant || "NF").toString();
+    const tenant = defaultTenant.shortName; // Force tenant to current panel
+
     const email = (body?.email || "").toLowerCase();
 
     if (!tenant || !email) {
@@ -66,7 +67,7 @@ export async function POST(req) {
 
     // Construct verify URL
     const apiBase = tenant_domain?.replace(/\/$/, "") || "http://localhost:3000";
-    const magicUrl = `${apiBase}/api/magic-link/verify?tenant=${tenant}&token=${rawToken}`;
+    const magicUrl = `${apiBase}/api/magic-link/verify?token=${rawToken}`;
 
     console.log("Magic URL:", magicUrl);
 
@@ -86,6 +87,8 @@ export async function POST(req) {
       success: true,
       id: result.rows[0].id,
       created_at: result.rows[0].created_at,
+      token: rawToken,
+      magicUrl: magicUrl,
     });
 
   } catch (err) {

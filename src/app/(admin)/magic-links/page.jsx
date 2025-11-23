@@ -25,7 +25,8 @@ const tenant_domain = defaultTenant.domain;
 
 export default withAuth(function MagicLinksAdminPage() {
   // 👇 Correct local state for tenant
-  const [tenantName, setTenantName] = useState(defaultTenant.shortName);  
+  // #const [tenantName, setTenantName] = useState(defaultTenant.shortName);  
+  const tenantName = defaultTenant.shortName;
   const [email, setEmail] = useState("");
   const [redirectUrl, setRedirectUrl] = useState("");
   const [loading, setLoading] = useState(false);
@@ -35,7 +36,7 @@ export default withAuth(function MagicLinksAdminPage() {
   // 🚀 Fetch links based on parameter not state
   async function fetchLinks(fetchTenant = tenantName) {
     setFetching(true);
-    const res = await fetch(`/api/magic-link/list?tenant=${fetchTenant}`);
+    const res = await fetch(`/api/magic-link/list`);
     const data = await res.json();
     setLinks(data.links || []);
     setFetching(false);
@@ -51,23 +52,32 @@ export default withAuth(function MagicLinksAdminPage() {
   }, [tenantName]);
 
   // ✨ Correct POST request including selected tenantName
-  async function generateLink() {
-    setLoading(true);
-    await fetch("/api/magic-link/create", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        tenant: tenantName, // ⬅ correct
-        email,
-        redirectUrl,
-      }),
-    });
-    setLoading(false);
-    fetchLinks(tenantName);
-  }
+  const [newMagicUrl, setNewMagicUrl] = useState(null);
 
-  async function deleteLink(id, linkTenant) {
-    await fetch(`/api/magic-link/delete?id=${id}&tenant=${linkTenant}`, {
+async function generateLink() {
+  setLoading(true);
+  const res = await fetch("/api/magic-link/create", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email }),
+  });
+
+  const data = await res.json();
+  setLoading(false);
+
+  if (data.success) {
+    setNewMagicUrl(data.magicUrl);               // Save temporarily
+    await navigator.clipboard.writeText(data.magicUrl);
+    toast.success("Magic link created & copied!");
+    fetchLinks(tenantName);
+  } else {
+    toast.error(data.message || "Failed to create link");
+  }
+}
+
+
+  async function deleteLink(id) {
+    await fetch(`/api/magic-link/delete?id=${id}`, {
       method: "DELETE",
     });
     fetchLinks(tenantName);
@@ -77,6 +87,30 @@ export default withAuth(function MagicLinksAdminPage() {
     <div className="space-y-8">
       <h1 className="text-3xl font-bold text-gray-800">Magic Link Admin</h1>
 
+      {newMagicUrl && (
+        <div className="p-4 mt-4 bg-green-50 border border-green-300 rounded-lg">
+          <p className="text-green-800 font-medium">✨ Magic link created:</p>
+          
+          <div className="mt-2 flex items-center justify-between">
+            <code className="text-sm break-all">{newMagicUrl}</code>
+            <button
+              className="ml-3 px-3 py-1 bg-green-600 hover:bg-green-700 text-white rounded"
+              onClick={() => navigator.clipboard.writeText(newMagicUrl)}
+            >
+              Copy
+            </button>
+          </div>
+
+          <button
+            className="mt-3 text-sm text-gray-600 hover:text-gray-800 underline"
+            onClick={() => setNewMagicUrl(null)}
+          >
+            Dismiss
+          </button>
+        </div>
+      )}
+
+
       {/* Create Form */}
       <div className="bg-white p-6 rounded-xl shadow border">
         <h2 className="text-xl font-semibold mb-4">Generate Magic Link</h2>
@@ -85,17 +119,7 @@ export default withAuth(function MagicLinksAdminPage() {
           {/* Tenant */}
           <div>
             <label className="block text-sm font-medium mb-1">Tenant</label>
-            <select
-              value={tenantName}
-              onChange={(e) => setTenantName(e.target.value)} // 👈 correct setter
-              className="w-full p-3 border rounded-lg bg-white"
-            >
-              {siteKeys.map((key) => (
-                <option key={key} value={key}>
-                  {key}
-                </option>
-              ))}
-            </select>
+            <p><strong>Tenant:</strong> {tenantName}</p>
           </div>
 
           {/* Email */}
