@@ -6,6 +6,7 @@ export const sites = {
       fullName: "Neurofibromatosis Simplified",
       disease: "Neurofibromatosis",
       apiUrl: process.env.NEXT_PUBLIC_NF_API_URL,
+      domain: "https://nfsimplified.com",
 
 
       theme: { // Theme
@@ -81,7 +82,7 @@ export const sites = {
       fullName: "Epidermolysis Bullosa Simplified",
       disease: "Epidermolysis Bullosa",
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
-
+      domain: "https://sseb.vercel.app",
 
       theme: { // Theme
         primary: "#ed1e87",
@@ -156,7 +157,7 @@ export const sites = {
       fullName: "Cystic Fibrosis Simplified",
       disease: "Cystic Fibrosis",
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
-
+      domain: "https://sscf-coral.vercel.app",
 
       theme: { // Theme
         primary: "#94e0d4",
@@ -233,7 +234,7 @@ export const sites = {
       fullName: "Asherman's Simplified",
       disease: "Asherman's Syndrome",
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
-
+      domain: "https://ssashermans.vercel.app",
 
       theme: { // Theme
         primary: "#f7d297",
@@ -310,7 +311,7 @@ export const sites = {
       fullName: "Aicardi Simplified",
       disease: "Aicardi Syndrome",
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
-
+      domain: "https://ssaicardi.vercel.app", 
 
       theme: { // Theme
         primary: "#d49bf2",
@@ -388,7 +389,7 @@ export const sites = {
       fullName: "RYR1 Simplified",
       disease: "RYR1",
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
-
+      domain: "https://ssryr1.vercel.app",
 
       theme: { // Theme
         primary: "#ba4e14",
@@ -466,7 +467,7 @@ export const sites = {
       fullName: "ALS Simplified",
       disease: "ALS",
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
-
+      domain: "https://ssals-ten.vercel.app",
 
       theme: { // Theme
         primary: "#a0bcfa",
@@ -777,7 +778,7 @@ export const sites = {
       fullName: "Canavan Simplified",
       disease: "Canavan Disease",
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
-
+      domain: "https://sscanavan.vercel.app",
 
       theme: { // Theme
         primary: "#1493ba",
@@ -855,6 +856,7 @@ export const sites = {
       fullName: "Vitiligo Simplified",
       disease: "Vitiligo",
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
+      domain: "https://ssvitiligo.vercel.app",
 
 
       theme: { // Theme
@@ -933,7 +935,7 @@ export const sites = {
       fullName: "HS Simplified",
       disease: "HS",
       apiUrl: process.env.NEXT_PUBLIC_EB_API_URL,
-
+      domain: "https://science-simplified-mu.vercel.app/",
 
       theme: {
         primary: "#7B2CBF",          // foundation purple

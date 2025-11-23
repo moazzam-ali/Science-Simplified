@@ -4,25 +4,27 @@ import crypto from "crypto";
 import { tenantQuery } from "@/lib/tenantDb";
 import { sign } from "jsonwebtoken";
 import { serialize } from "cookie";
+import { tenant as defaultTenant } from "@/lib/config";
 
 
 
 // Tenant → Domain mapping (final)
-const TENANT_DOMAINS = {
-  NF: "https://nfsimplified.com",
-  EB: "https://sseb.vercel.app",
-  Vitiligo: "https://ssvitiligo.vercel.app",
-  CF: "https://sscf-coral.vercel.app",
-  ALS: "https://ssals-ten.vercel.app",
-  HS: "https://science-simplified-mu.vercel.app/",
-  Ashermans: "https://ssashermans.vercel.app",
-  RYR1: "https://ssryr1.vercel.app",
-  Aicardi: "https://ssaicardi.vercel.app",
-  Progeria: "https://ssprogeria.vercel.app",
-  RETT: "https://ssrett.vercel.app",
-  Canavan: "https://sscanavan.vercel.app",
-  HUNTINGTONS: "https://sshuntingtons.vercel.app", 
-};
+// const TENANT_DOMAINS = {
+//   NF: "https://nfsimplified.com",
+//   EB: "https://sseb.vercel.app",
+//   Vitiligo: "https://ssvitiligo.vercel.app",
+//   CF: "https://sscf-coral.vercel.app",
+//   ALS: "https://ssals-ten.vercel.app",
+//   HS: "https://science-simplified-mu.vercel.app/",
+//   Ashermans: "https://ssashermans.vercel.app",
+//   RYR1: "https://ssryr1.vercel.app",
+//   Aicardi: "https://ssaicardi.vercel.app",
+//   Progeria: "https://ssprogeria.vercel.app",
+//   RETT: "https://ssrett.vercel.app",
+//   Canavan: "https://sscanavan.vercel.app",
+//   HUNTINGTONS: "https://sshuntingtons.vercel.app", 
+// };
+const tenant_domain = defaultTenant.domain;
 
 export async function GET(req) {
   try {
@@ -103,7 +105,7 @@ export async function GET(req) {
     });
 
     // Redirect to frontend
-    const domain = TENANT_DOMAINS[tenant] || "http://localhost:3000";
+    const domain = tenant_domain || "http://localhost:3000";
     const finalUrl = `${domain}/assigned-articles`;
 
     const response = NextResponse.redirect(finalUrl);

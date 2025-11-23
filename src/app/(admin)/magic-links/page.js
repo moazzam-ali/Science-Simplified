@@ -5,21 +5,22 @@ import { siteKeys } from "@/lib/siteKeys";
 import { tenant as defaultTenant } from "@/lib/config";
 
 // Tenant → Domain mapping
-const TENANT_DOMAINS = {
-  NF: "https://nfsimplified.com",
-  EB: "https://sseb.vercel.app",
-  Vitiligo: "https://ssvitiligo.vercel.app",
-  CF: "https://sscf-coral.vercel.app",
-  ALS: "https://ssals-ten.vercel.app",
-  HS: "https://science-simplified-mu.vercel.app",
-  Ashermans: "https://ssashermans.vercel.app",
-  RYR1: "https://ssryr1.vercel.app",
-  Aicardi: "https://ssaicardi.vercel.app",
-  Progeria: "https://ssprogeria.vercel.app",
-  RETT: "https://ssrett.vercel.app",
-  Canavan: "https://sscanavan.vercel.app",
-  HUNTINGTONS: "https://sshuntingtons.vercel.app",
-};
+// const TENANT_DOMAINS = {
+//   NF: "https://nfsimplified.com",
+//   EB: "https://sseb.vercel.app",
+//   Vitiligo: "https://ssvitiligo.vercel.app",
+//   CF: "https://sscf-coral.vercel.app",
+//   ALS: "https://ssals-ten.vercel.app",
+//   HS: "https://science-simplified-mu.vercel.app",
+//   Ashermans: "https://ssashermans.vercel.app",
+//   RYR1: "https://ssryr1.vercel.app",
+//   Aicardi: "https://ssaicardi.vercel.app",
+//   Progeria: "https://ssprogeria.vercel.app",
+//   RETT: "https://ssrett.vercel.app",
+//   Canavan: "https://sscanavan.vercel.app",
+//   HUNTINGTONS: "https://sshuntingtons.vercel.app",
+// };
+const tenant_domain = defaultTenant.domain;
 
 export default function MagicLinksAdminPage() {
   // 👇 Correct local state for tenant
@@ -42,7 +43,7 @@ export default function MagicLinksAdminPage() {
   // 🔁 Auto-update when tenant changes
   useEffect(() => {
     if (tenantName) {
-      const domain = TENANT_DOMAINS[tenantName];
+      const domain = tenant.domain;
       setRedirectUrl(`${domain}/assigned-articles`);
       fetchLinks(tenantName); // 👈 direct parameter
     }

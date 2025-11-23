@@ -3,23 +3,25 @@ import crypto from "crypto";
 import { NextResponse } from "next/server";
 import { tenantQuery, getTenantPool } from "@/lib/tenantDb";
 import { sendMagicLinkEmail } from "@/lib/email";
+import { tenant as defaultTenant } from "@/lib/config";
 
 // Tenant → Domain Map (final)
-const TENANT_DOMAINS = {
-  NF: "https://nfsimplified.com",
-  EB: "https://sseb.vercel.app",
-  Vitiligo: "https://ssvitiligo.vercel.app",
-  CF: "https://sscf-coral.vercel.app",
-  ALS: "https://ssals-ten.vercel.app",
-  HS: "https://science-simplified-mu.vercel.app/",
-  Ashermans: "https://ssashermans.vercel.app",
-  RYR1: "https://ssryr1.vercel.app",
-  Aicardi: "https://ssaicardi.vercel.app",
-  Progeria: "https://ssprogeria.vercel.app",
-  RETT: "https://ssrett.vercel.app",
-  Canavan: "https://sscanavan.vercel.app",
-  HUNTINGTONS: "https://sshuntingtons.vercel.app", 
-};
+// const TENANT_DOMAINS = {
+//   NF: "https://nfsimplified.com",
+//   EB: "https://sseb.vercel.app",
+//   Vitiligo: "https://ssvitiligo.vercel.app",
+//   CF: "https://sscf-coral.vercel.app",
+//   ALS: "https://ssals-ten.vercel.app",
+//   HS: "https://science-simplified-mu.vercel.app/",
+//   Ashermans: "https://ssashermans.vercel.app",
+//   RYR1: "https://ssryr1.vercel.app",
+//   Aicardi: "https://ssaicardi.vercel.app",
+//   Progeria: "https://ssprogeria.vercel.app",
+//   RETT: "https://ssrett.vercel.app",
+//   Canavan: "https://sscanavan.vercel.app",
+//   HUNTINGTONS: "https://sshuntingtons.vercel.app", 
+// };
+const tenant_domain = defaultTenant.domain;
 
 export async function POST(req) {
   try {
@@ -59,7 +61,7 @@ export async function POST(req) {
     ]);
 
     // Construct verify URL
-    const apiBase = process.env.APIHOSTNAME?.replace(/\/$/, "") || "http://localhost:3000";
+    const apiBase = tenant_domain?.replace(/\/$/, "") || "http://localhost:3000";
     const magicUrl = `${apiBase}/api/magic-link/verify?tenant=${tenant}&token=${rawToken}`;
 
     console.log("Magic URL:", magicUrl);
