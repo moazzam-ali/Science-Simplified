@@ -1,13 +1,13 @@
-export const revalidate = 0; // Disable caching for this API route
+export const revalidate = 0; // Disable caching
 
 import { query } from "@/lib/db";
 import { NextResponse } from "next/server";
 
+
 export async function GET(request, { params }) {
-    const { id } = params; // Extract the article ID from the URL parameters
+    const { id } = params;
 
     try {
-        // Validate article ID
         const articleId = parseInt(id, 10);
         if (isNaN(articleId)) {
             return NextResponse.json(
@@ -16,7 +16,6 @@ export async function GET(request, { params }) {
             );
         }
 
-        // Fetch the article, selected profile fields, and favorite count
         const articleResult = await query(
             `
             SELECT 
@@ -37,19 +36,69 @@ export async function GET(request, { params }) {
             [articleId]
         );
 
-        // Check if the article exists
         if (articleResult.rows.length > 0) {
-            return NextResponse.json(articleResult.rows[0]); // Send article with profile data and Favorite count
-        } else {
-            return NextResponse.json(
-                { success: false, message: "Article not found" },
-                { status: 404 }
-            );
+            return NextResponse.json(articleResult.rows[0]);
         }
+
+        return NextResponse.json(
+            { success: false, message: "Article not found" },
+            { status: 404 }
+        );
+
     } catch (error) {
         console.error("Error fetching article:", error);
         return NextResponse.json(
             { success: false, message: "Error fetching article" },
+            { status: 500 }
+        );
+    }
+}
+
+// =========================
+//  PATCH — UPDATE IMAGE_URL
+// =========================
+export async function PATCH(request, { params }) {
+    const { id } = params;
+
+    try {
+        const body = await request.json();
+        const { imageUrl } = body;
+
+        if (!imageUrl) {
+            return NextResponse.json(
+                { success: false, message: "No imageUrl provided" },
+                { status: 400 }
+            );
+        }
+
+        const articleId = parseInt(id, 10);
+        if (isNaN(articleId)) {
+            return NextResponse.json(
+                { success: false, message: "Invalid article ID" },
+                { status: 400 }
+            );
+        }
+
+        // Update image_url
+        const updateResult = await query(
+            `
+            UPDATE article
+            SET image_url = $1
+            WHERE id = $2
+            RETURNING *
+            `,
+            [imageUrl, articleId]
+        );
+
+        return NextResponse.json({
+            success: true,
+            article: updateResult.rows[0],
+        });
+
+    } catch (error) {
+        console.error("PATCH error updating article image:", error);
+        return NextResponse.json(
+            { success: false, message: "Failed to update article image" },
             { status: 500 }
         );
     }

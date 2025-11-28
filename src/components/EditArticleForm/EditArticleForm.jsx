@@ -8,7 +8,7 @@ import "./EditArticleForm.scss";
 import Image from "next/image";
 import sanitizeHtml from "sanitize-html";
 import { cleanName } from "@/lib/utils";
-
+import { toast } from "react-toastify";
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -107,6 +107,42 @@ const EditArticleForm = ({
     const [newAuthor, setNewAuthor] = useState("");
     const [publicationDate, setPublicationDate] = useState(articleData?.publication_date || "");
 
+    // AI Generation loading state
+    const [isGeneratingImage, setIsGeneratingImage] = useState(false);
+ 
+    // Generate image button
+    const handleGenerateAIImage = async () => {
+    if (!content.trim()) {
+        toast.error("Add article content first.");
+        return;
+    }
+
+    setIsGeneratingImage(true);
+
+    try {
+        const res = await fetch("/api/images/generate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                text: content,
+                articleId: articleData?.id,
+            }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            throw new Error(data.error || "Failed to generate image");
+        }
+
+        setImageUrl(data.url);
+        toast.success("AI-generated image added!");
+    } catch (err) {
+        toast.error("Image generation failed: " + err.message);
+    } finally {
+        setIsGeneratingImage(false);
+    }
+};
 
     const handleAddTag = (tag) => {
         if (tag && !tags.includes(tag)) {
@@ -400,21 +436,43 @@ const EditArticleForm = ({
                 <Label className="edit-article-form__label">Cover image</Label>
                 <div className="edit-article-form__input !h-auto">
                     <div className="flex flex-col-reverse md:flex-row items-center gap-16">
-                        <ImageUpload
-                            onImageUpload={handleImageUpload}
-                            initialImageUrl={articleData?.image_url}
-                        />
-                        {imageUrl && (
-                            <Image
-                                src={imageUrl || "/placeholder.svg"}
-                                alt={title}
-                                width={320}
-                                height={200}
-                                objectFit="contain"
-                                objectPosition="center"
-                                loading="lazy"
-                            />
-                        )}
+                        <div className="flex flex-col-reverse md:flex-row items-center gap-16">
+
+    {/* AI IMAGE BUTTON */}
+    <div className="flex flex-col gap-4">
+        <Button
+            type="button"
+            className="btn btn-secondary ai-generate-btn"
+            disabled={isGeneratingImage}
+            onClick={handleGenerateAIImage}
+        >
+            {isGeneratingImage ? (
+                <>
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    Generating...
+                </>
+            ) : (
+                "Generate AI Image"
+            )}
+        </Button>
+
+        {/* Manual Upload */}
+        <ImageUpload
+            onImageUpload={handleImageUpload}
+            initialImageUrl={articleData?.image_url}
+        />
+    </div>
+
+    {imageUrl && (
+        <Image
+            src={imageUrl}
+            alt={title}
+            width={320}
+            height={200}
+            style={{ objectFit: "contain" }}
+        />
+    )}
+</div>
                     </div>
                 </div>
             </div>

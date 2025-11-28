@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className="navbar-inner boxed padding">
         {/* Left logo */}
         <Link href="/" className="navbrand">
-          <Image src={navbrand} alt="Logo" className="navbrand-img" />
+          <Image src={navbrand} alt="Logo" className="navbrand-img" width={200} height={200} />
         </Link>
 
         {/* Main nav */}
